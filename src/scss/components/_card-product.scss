@@ -1,0 +1,127 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.card-product {
+  padding: 32px;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid transparent;
+  transition: border-color .35s;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0.96px;
+  color: #78560C;
+
+  display: flex;
+  flex-direction: column;
+  &:hover,
+  &:focus {
+    border-color: #78560C;
+  }
+
+  &__img-wrap {
+    width: 100%;
+    aspect-ratio: 246 / 216.19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: #191001;
+  }
+
+  &__brand {
+    padding-bottom: 24px;
+  }
+
+  &__cost {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 170%;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+    color: #78560C;
+  }
+
+  &__favorite,
+  &__badge {
+    position: absolute;
+  }
+
+  &__favorite {
+    width: 25px;
+    height: 25px;
+    top: 32px;
+    right: 32px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+    svg {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__badge {
+    padding: 4px 10px;
+    background-color: #78560C;
+    border-radius: 3px;
+    color: #FFFFFF;
+  }
+
+  &__cost_old {
+    font-size: 14px;
+    text-decoration: line-through;
+    text-decoration-color: #78560C;
+  }
+
+  &__cost_new {
+    color: #b90202;
+    margin-left: 10px;
+  }
+  &__price-block{
+    margin-top: auto;
+  }
+}
+
+.btn_add_to_cart {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  right: 32px;
+  bottom: 32px;
+  z-index: 3;
+  img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition: .3s;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.25);
+    }
+  }
+}

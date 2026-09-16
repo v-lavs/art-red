@@ -1,0 +1,119 @@
+@use "../../base/mixins";
+@use "../../base/variables";
+
+.section-banner {
+  height: calc(100vh - 128px);
+  margin-bottom: 84px;
+
+  .btn {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 13px;
+    margin-right: 26px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_white {
+      background-color: #ffffff;
+      color: #78560C;
+      border: 1px solid rgba(120, 86, 12, 0.15);
+
+      &:hover {
+        background-color: #78560C;
+        border-color: rgba(120, 86, 12, 0.15);
+        color: #FFFFFF;
+      }
+    }
+
+    &_stroke {
+      background-color: transparent;
+      border: 1px solid #ffffff;
+      overflow: hidden;
+
+      &:hover {
+        background-color: rgba(241, 246, 251, 0.4);
+      }
+    }
+  }
+}
+
+.category-slider .slider-progress {
+  margin-bottom: 0;
+}
+
+.banner-slider {
+  height: 100%;
+
+  .splide__track {
+    height: 100%;
+  }
+}
+
+.banner-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: '';
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: variables.$secondary-font;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    font-family: variables.$secondary-font;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0;
+    margin-bottom: 39px;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 1009px;
+    width: 100%;
+    padding: 0 24px 100px;
+    z-index: 1;
+  }
+
+  &__block-btns {
+    display: flex;
+  }
+}
+
+.banner-slide__img,
+.banner-slide__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Видео уходит на задний план */
+}
+
+.banner-slide__content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+
+}

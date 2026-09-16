@@ -1,0 +1,24 @@
+@use "../../base/mixins";
+@use "../../base/variables";
+
+.partner-marquee {
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+  }
+
+&__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-height: 192px;
+  }
+  &__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

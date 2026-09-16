@@ -1,0 +1,112 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Новинки Весна 2025 від Churchill — {{ siteName }}{% endblock %}
+
+{% block content %}
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-header">
+                <div class="post-date">17.02.2025</div>
+                <h1 class="section__title section__title_xl">Новинки Весна 2025 від Churchill</h1>
+            </div>
+            <div class="page-banner__thumb">
+                <img src="images/content/single-post-img.png" alt="">
+            </div>
+        </div>
+    </section>
+    {# breadcrumbs #}
+    <div class="container">
+        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+        {{ breadcrumbs ([
+            {title: "Блог",  url: "page-blog.html"},
+            {title: "Новинки Весна 2025 від Churchill"}
+        ]) }}
+    </div>
+    <article class="post">
+        <div class="container">
+            <div class="post__meta">
+                <div class="post__author">
+                    <div class="post__author-avatar">
+                        <img src="images/content/single-post/avatar.png" alt="автор РУСЛАН СИВАК">
+                    </div>
+                    <div class="post__author-name">РУСЛАН СИВАК</div>
+                </div>
+                <div class="post__actions">
+                    <a href="#" class="post__comments">
+                        <img src="images/icons/comment.svg" alt="">
+                        <span>Коментарі</span>
+                    </a>
+                    <div class="post__socials">
+
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="images/icons/sharp-facebook.svg" alt="">
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <img src="images/icons/whatsapp.svg" alt="">
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <img src="images/icons/telegram-fill.svg" alt="">
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Viber">
+                            <img src="images/icons/viber.svg" alt="">
+                        </a>
+
+                        <button type="button" class="social-link social-link_copy" aria-label="Скопіювати посилання">
+                            <img src="images/icons/link-linear.svg" alt="">
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="post__content dynamic-content">
+                <h2>Бренд Churchill представив <a href="#">нові колекції тарілок</a>, які поєднують традиції англійської
+                    кераміки та сучасний дизайн. Відомий своєю якістю та вишуканими візерунками, Churchill знову
+                    здивував стильними
+                    оновленнями.</h2>
+
+                <p>Серед новинок –  Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить для
+                    мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p><a href="#">Нові колекції Churchill</a> – це поєднання естетики та функціональності, які прикрасять будь-який стіл і
+                    зроблять подачу страв ще більш вишуканою.</p>
+                <p>Серед новинок – Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить для
+                    мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який стіл і
+                    зроблять подачу страв ще більш вишуканою.</p>
+                <ul>
+                    <li>Серед новинок –  Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить для
+                        мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</li>
+                    <li>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                        стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                        печах.</li>
+                    <li>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який стіл і
+                        зроблять подачу страв ще більш вишуканою.</li>
+                </ul>
+                <ol>
+                    <li>Серед новинок –  Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить для
+                        мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</li>
+                    <li>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                        стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                        печах.</li>
+                    <li>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який стіл і
+                        зроблять подачу страв ще більш вишуканою.</li>
+                </ol>
+            </div>
+            <div class="post__footer">
+                <a href="#" class="btn btn_secondary btn_gold" download>
+                    Скачати каталог
+                </a>
+            </div>
+        </div>
+    </article>
+
+{% endblock %}

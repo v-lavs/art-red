@@ -1,0 +1,52 @@
+@use "../base/mixins";
+@use "../base/variables";
+// Page-catalog
+
+.page-catalog {
+  .title {
+    color: #191001;
+    margin-bottom: 46px;
+  }
+}
+
+.catalog__inner {
+  display: flex;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 67px;
+
+  &__item {
+    border: 1px solid rgba(120, 86, 12, 0.15);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    color: #78560C;
+    padding: 12px 11px;
+
+    &.is-active {
+      border-color: #78560C;
+    }
+  }
+}
+
+.catalog__products {
+  padding-bottom: 100px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.catalog__toolbar{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 47px;
+}
+.page-description{
+  padding-bottom: 100px;
+}

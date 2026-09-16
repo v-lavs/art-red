@@ -1,0 +1,162 @@
+{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}На подарунок — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-catalog{% endblock %}
+
+{% block content %}
+    {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+
+    <div class="container">
+        {{ breadcrumbs ([
+            {title: "На подарунок"}
+        ]) }}
+    </div>
+    <section class="section-catalog">
+        <div class="container">
+            <h2 class="section__title section__title_sm">На подарунок</h2>
+            <nav class="catalog-categories" aria-label="Категорії товарів">
+                <ul class="category-list">
+                    <li class="category-list__item is-active"><a href="#">Для нього</a></li>
+                    <li class="category-list__item"><a href="#">Для неї</a></li>
+                    <li class="category-list__item"><a href="#">На хрестини</a></li>
+                    <li class="category-list__item"><a href="#">На весілля</a></li>
+                    <li class="category-list__item"><a href="#">Для родини</a></li>
+                    <li class="category-list__item"><a href="#">На новосілля</a></li>
+                </ul>
+            </nav>
+            <div class="catalog__inner">
+                {{ catalogSidebar(filters) }}
+
+                <section class="catalog__products">
+                    <div class="catalog__toolbar">
+                        <label class="sort">
+                            <select class="sort__select js-custom-select right">
+                                <option value="by-rating" selected>За рейтингом</option>
+                                <option value="from-cheap-to-expensive">Від дешевих до дорогих</option>
+                                <option value="from-expensive-to-cheap">Від дорогих до дешевих</option>
+                            </select>
+                        </label>
+                    </div>
+                    {% set products = [
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: "30",
+                            discount_cost: "716"
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        }
+                    ] %}
+
+                    <ul class="products-grid">
+
+                        {% for product in products %}
+                            {% include "partials/card-product.njk" %}
+                        {% else %}
+                            <li>
+                                <p>В даній категорії товару не знайдено.</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="wrap-pagination">
+                        {% include "partials/pagination.njk" %}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+{% endblock %}

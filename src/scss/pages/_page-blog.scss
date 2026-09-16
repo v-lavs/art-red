@@ -1,0 +1,38 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+
+.blog-filter{
+  padding-bottom: 60px;
+  &__link{
+    display: inline-block;
+    font-family: variables.$secondary-font;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #9A9A9A;
+    padding: 8px;
+    margin-right: 16px;
+    transition: .35s;
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover,
+    &.is-active{
+      color: #78560C;
+      -webkit-text-stroke: 0.25px currentColor;
+    }
+  }
+}
+
+.blog-list{
+  display: grid;
+  //grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  gap: 60px 18px;
+}
+.section-blog{
+  padding-bottom: 120px;
+}

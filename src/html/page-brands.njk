@@ -1,0 +1,74 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Бренди та каталоги — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-brands{% endblock %}
+
+{% block content %}
+    {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+
+    <div class="container">
+        {{ breadcrumbs ([
+            {title: "Бренди та каталоги"}
+        ]) }}
+    </div>
+    <section class="section-brands">
+        <div class="container">
+            <h2 class="section__title section__title_sm">Бренди та каталоги</h2>
+
+            {% set brands = [
+                { title: "100%chief", url: "page-brand-products.html", img: "images/content/brands/100chief.png" },
+                { title: "Pordamsa", url: "#", img: "images/content/brands/pordamsa.png" },
+                { title: "Churhill", url: "#", img: "images/content/brands/churhill.png" },
+                { title: "Zeher", url: "#", img: "images/content/brands/zeher.png" },
+                { title: "Abert", url: "page-brand-products.html", img: "images/content/brands/abert.png" },
+                { title: "CHIC tableware", url: "#", img: "images/content/brands/dhd.png" },
+                { title: "Pentole Agneli", url: "#", img: "images/content/brands/pentole.png" },
+                { title: "Arcoroc", url: "#", img: "images/content/brands/arcoroc.png" },
+                { title: "CNB Enterprises", url: "#", img: "images/content/brands/cnb-enterprises.png" },
+                { title: "Comas", url: "#", img: "images/content/brands/comas.png" },
+                { title: "Candola", url: "#", img: "images/content/brands/candola.png" },
+                { title: "Aps", url: "#", img: "images/content/brands/aps.png" },
+                { title: "Eternum", url: "#", img: "images/content/brands/eternum.png" },
+                { title: "Fortessa", url: "#", img: "images/content/brands/fortessa.png" },
+                { title: "F2d", url: "#", img: "images/content/brands/f2d.png" },
+                { title: "Id Fine", url: "#", img: "images/content/brands/id-fine.png" },
+                { title: "Cosy & Trendy", url: "#", img: "images/content/brands/cosy-trendy.png" },
+                { title: "Ariane", url: "#", img: "images/content/brands/riane.png" },
+                { title: "Fine Dine", url: "#", img: "images/content/brands/fine-dine.png" },
+                { title: "Krosno", url: "#", img: "images/content/brands/crosno.png" },
+                { title: "Koziol", url: "#", img: "images/content/brands/koziol.png" },
+                { title: "Lubiana", url: "#", img: "images/content/brands/lubiana.png" },
+                { title: "LAV", url: "#", img: "images/content/brands/lav.png" },
+                { title: "Le Coq Porcelaine", url: "#", img: "images/content/brands/le-coq-porcelaine.png" },
+                { title: "Libbey", url: "#", img: "images/content/brands/libbey.png" },
+                { title: "Tognana", url: "#", img: "images/content/brands/tognana.png" },
+                { title: "Chikio", url: "#", img: "images/content/brands/chikio.png" },
+                { title: "Olipac", url: "#", img: "images/content/brands/olipac.png" },
+                { title: "Vista Alegre", url: "#", img: "images/content/brands/vista-alegre.png" },
+                { title: "Vicrila", url: "#", img: "images/content/brands/vicrila.png" },
+                { title: "Iнші бренди", url: "#", img: "images/content/brands/inshi-brendy.png" },
+                { title: "LuigiBormioli", url: "#", img: "images/content/brands/luigi-bormioli.png" },
+                { title: "Solex", url: "#", img: "images/content/brands/solex.png" },
+                { title: "Schott Swiesel", url: "#", img: "images/content/brands/schott-swiesel.png" },
+                { title: "Wood Food", url: "#", img: "images/content/brands/wood-food.png" },
+                { title: "TableCraft", url: "#", img: "images/content/brands/table-craft.png" },
+                { title: "Salt & Pepper", url: "#", img: "images/content/brands/salt-pepper.png" },
+                { title: "Sumisura", url: "#", img: "images/content/brands/sumisura.png" },
+                { title: "Linddna", url: "#", img: "images/content/brands/linddna.png" },
+                { title: "Porland Porselen", url: "#", img: "images/content/brands/porland.png" }
+            ] %}
+
+            <ul class="brands__list">
+                {% for item in brands %}
+                    <li class="brands__item">
+                        <a href="{{ item.url }}">
+                            <img src="{{ item.img }}" alt="{{ item.title }}">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,196 @@
+{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}Сторінка бренду Abert — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-catalog brand-products{% endblock %}
+
+{% block content %}
+    <section class="section-intro">
+        <div class="container">
+            {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+            {{ breadcrumbs ([
+                {title: "Бренди та каталоги",  url: "page-products.html"},
+                {title: "ABERT"}
+            ]) }}
+            <div class="section__header">
+                <div class="part-left">
+                    <div class="wrap-icon-brand">
+                        <img src="images/content/brands/abert.png" alt="Бренд ABERT" class="icon-brand">
+                    </div>
+                    <h2 class="section__title section__title_md">Ми - офіційний імпортер/дистриб'ютор Abert в
+                        Україні</h2>
+                </div>
+                <div class="part-right">
+                    <button type="button" class="btn btn_secondary btn_orange">Скачати каталог</button>
+                </div>
+            </div>
+            <div class="page-description dynamic-content">
+                <p>З 1929 року Abert є символом досконалості якості та творчості, розвивається паралельно до сучасних
+                    дизайнерських тенденцій. Бренд, який починав з виробництва каструль з латуні сьогодні пропонує
+                    широкий вибір кухонного інвентаря, сковорідок, столових приборів та аксесуарів.</p>
+                <p>Для виробництва столових приборів компанія використовує хромовану сталь 18/10, максимально стійку до
+                    корозії без шкідливих домішок. Завдяки багаторівневому технологічному процесу полірування металу,
+                    вироби максимально довго залишаються гладким та блискучими.</p>
+                <p>Технології PVD – обробка поверхні металу у вакуумному середовищі титаном або цирконієм. Цей метод
+                    робить поверхню виробу стійким до механічних пошкоджень а також дає можливість покрити прибори
+                    кольором Black або Copper. За бажанням клієнт може замовити брашування приборів вибраної серії.
+                    Брашування надає металу благородний матовий еффек і вінтажний вигляд.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-catalog">
+        <div class="container">
+
+            <div class="catalog__inner">
+
+                {{ catalogSidebar(filters) }}
+
+                <section class="catalog__products">
+                    <div class="catalog__toolbar">
+                        <label class="sort">
+                            <select class="sort__select js-custom-select right">
+                                <option value="by-rating" selected>За рейтингом</option>
+                                <option value="from-cheap-to-expensive">Від дешевих до дорогих</option>
+                                <option value="from-expensive-to-cheap">Від дорогих до дешевих</option>
+                            </select>
+                        </label>
+                    </div>
+                    {% set products = [
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: "30",
+                            discount_cost: "716"
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "page-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        }
+                    ] %}
+
+                    <ul class="products-grid">
+
+                        {% for product in products %}
+                            {% include "partials/card-product.njk" %}
+                        {% else %}
+                            <li>
+                                <p>В даній категорії товару не знайдено.</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="wrap-pagination">
+                        {% include "partials/pagination.njk" %}
+                    </div>
+                </section>
+            </div>
+            <div class="page-description dynamic-content">
+                <p>Серед новинок – Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить
+                    для мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який
+                    стіл і зроблять подачу страв ще більш вишуканою.</p>
+                <p>Серед новинок – Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить
+                    для мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який
+                    стіл і зроблять подачу страв ще більш вишуканою.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

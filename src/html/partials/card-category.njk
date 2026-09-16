@@ -1,0 +1,31 @@
+<li class="category-card"  style="--card-bg: {{ category.bg }};">
+    <div class="category-card__body">
+        <h3 class="category-card__title">
+            {{ category.title }}
+        </h3>
+
+        <ul class="category-card__list">
+            {% for item in category.items %}
+                <li class="category-card__item">
+                    <a href="{{ item.url }}">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if category.img %}
+            <img
+                    class="category-card__image"
+                    src="{{ category.img }}"
+                    alt=""
+            >
+        {% endif %}
+    </div>
+
+    <div class="category-card__footer">
+        <a href="{{ category.url }}" class="btn btn_primary">
+            Переглянути все
+        </a>
+    </div>
+</li>
+

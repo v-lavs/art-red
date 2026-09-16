@@ -1,0 +1,69 @@
+// Buttons
+@use "../base/mixins";
+@use "../base/variables";
+
+.btn {
+  display: inline-block;
+  appearance: none;
+  font-family: variables.$main-font;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  border-color: transparent;
+  transition: .35s;
+
+  &_primary {
+    background-color: transparent;
+    padding: 8px;
+    color: #78560C;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: url('data:image/svg+xml,<svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.5303 6.05377C24.8232 5.76087 24.8232 5.286 24.5303 4.99311L19.7574 0.220137C19.4645 -0.0727568 18.9896 -0.0727568 18.6967 0.220137C18.4038 0.51303 18.4038 0.987904 18.6967 1.2808L22.9393 5.52344L18.6967 9.76608C18.4038 10.059 18.4038 10.5338 18.6967 10.8267C18.9896 11.1196 19.4645 11.1196 19.7574 10.8267L24.5303 6.05377ZM0 5.52344L0 6.27344H24V5.52344V4.77344H0L0 5.52344Z" fill="%2378560C"/></svg>');
+      width: 24px;
+      overflow: hidden;
+      transition: all 0.35s;
+      height: 20px;
+      margin-left: 8px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover:after {
+      transform: translateX(8px);
+    }
+  }
+
+  &_secondary {
+    font-weight: 300;
+    letter-spacing: 0.73px;
+    color: #FEFEFC;
+    border-radius: 5px;
+    padding: 11px 18px;
+  }
+
+  &_gold {
+    background-color: #78560C;
+    border: 1px solid #78560C;
+
+    &:hover,
+    &:focus {
+      background-color: #D9A10C;
+      border-color: #D9A10C;
+    }
+  }
+
+  &_orange {
+    background-color: #D9A10C;
+    border: 1px solid #D9A10C;
+
+    &:hover,
+    &:focus {
+      background-color: #78560C;
+      border-color: #78560C;
+    }
+  }
+}

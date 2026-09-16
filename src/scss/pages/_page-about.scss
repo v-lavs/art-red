@@ -1,0 +1,115 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.section-about{
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  &__title{
+    font-family: variables.$main-font;
+    font-weight: 300;
+    line-height: 58.71px;
+    letter-spacing: 0%;
+    color: #000;
+  }
+}
+
+.about{
+  display: flex;
+  padding-bottom: 62px;
+  &__tagline{
+    font-size: 45px;
+    line-height: 1.3;
+    letter-spacing: 0;
+    width: 54.88%;
+    flex-shrink: 0;
+  }
+  &__text{
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+}
+
+.company-values{
+  border-top: 1px solid #A8A8A7;
+  padding-bottom: 100px;
+  &__row{
+    display: flex;
+    align-items: center;
+    padding: 46px 0;
+    border-bottom: 1px solid #A8A8A7;
+  }
+  &__title{
+    position: relative;
+    width: 54.88%;
+    flex-shrink: 0;
+    padding-left: 24px;
+    &:before{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: #000000;
+      border-radius: 3px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.section-advantages{
+  background-color: #F7F4E9;
+  padding: 74px 0;
+}
+
+.advantages{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  color: #78560C;
+  &__item{
+    padding: 46px 36px;
+    text-align: center;
+    border: 1px solid rgba(120, 86, 12, 0.3);
+    border-radius: 13px;
+  }
+  &__title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.44;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.section-why-choose {
+  padding: 134px 0;
+  .title_md {
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 48px;
+  }
+  ul {
+    font-size: 24px;
+    line-height: 1.875;
+    li {
+      border-bottom: 1px solid rgba(120, 86, 12, 0.3);
+      position: relative;
+      min-height: 70px;
+      padding: 12px 12px 12px 30px;
+      &:before {
+        content: ' ';
+        display: block;
+        background-color: #000000;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 0;
+        top: 29px;
+        border-radius: 3px;
+
+      }
+    }
+  }
+}

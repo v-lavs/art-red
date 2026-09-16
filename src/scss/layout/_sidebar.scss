@@ -1,0 +1,89 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.catalog__sidebar {
+  width: 326px;
+  padding-right: 16px;
+  padding-bottom: 60px;
+  flex-shrink: 0;
+  legend {
+    width: 100%;
+  }
+  .btn_primary{
+    margin-bottom: 32px;
+  }
+}
+
+.price-filter {
+  &__values {
+    flex-shrink: 0;
+  }
+
+  &__slider {
+    margin-top: 14px;
+  }
+}
+
+.price-filter__header legend,
+.catalog-filter__heading {
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #78560C;
+  display: block;
+
+}
+
+.catalog-filter {
+  padding-bottom: 32px;
+
+  &:last-of-type {
+    padding-bottom: 42px;
+  }
+
+  &.is-active {
+    .catalog-filter__heading_toggle:after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &__heading_toggle {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 23px;
+      height: 23px;
+      background-image: url(../images/icons/chevron-down-sb.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .collapse {
+    overflow: hidden;
+    max-height: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    transition: max-height 0.5s, padding 0.5s;
+
+    &.show {
+      max-height: 1000px;
+      padding-top: 16px;
+    }
+  }
+}
+
+.btn_open-sidebar,
+.catalog-filter .btn_close {
+  display: none;
+}

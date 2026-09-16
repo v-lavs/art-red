@@ -1,0 +1,113 @@
+{% macro catalogSidebar(filters) %}
+
+    {% set filters = [
+        {
+            title: "Бренд", name: "brand",
+            items: [
+            {label: "Churchill", value: "churchill"},
+            {label: "Pordamsa", value: "pordamsa"},
+            {label: "100% Chef", value: "100Chef"},
+            {label: "Zieher", value: "zieher"},
+            {label: "Abert", value: "abert"}
+        ]
+        },
+        {
+            title: "Матеріал", name: "material",
+            items: [
+            {label: "Порцеляна", value: "porcelain"},
+            {label: "Алюміній", value: "aluminum"},
+            {label: "Дерево", value: "tree"},
+            {label: "Меламін", value: "melamine"},
+            {label: "Нержавіюча сталь", value: "stainless-steel"}
+        ]
+        },
+        {
+            title: "Колір", name: "color",
+            items: [
+            {label: "Білий", value: "white"},
+            {label: "Кремовий", value: "creamy"},
+            {label: "Чорний", value: "black"},
+            {label: "Графітовий", value: "graphitic"},
+            {label: "Прозорий", value: "transparent"},
+            {label: "Синій", value: "blue"}
+        ]
+        },
+        {
+            title: "Розмір", name: "size",
+            items: [
+            {label: "від 0-12 см", value: "0-12"},
+            {label: "від 13-15 см", value: "13-15"},
+            {label: "від 16-22 см", value: "16-22"},
+            {label: "від 23-25 см", value: "23-25"},
+            {label: "від 26-29 см", value:"26-29"},
+            {label: "від 30-49 см", value: "30-49"},
+            {label: "від 50 см", value: "50"}
+        ]
+        },
+        {
+            title: "Об’єм", name: "volume",
+            items: [
+            {label: "від 2-5 л", value: "from-2-5l"},
+            {label: "до 1 л", value: "up-to-1l"},
+            {label: "до 1.5 л", value: "up-to-1.5l"},
+            {label: "до 100 мл", value: "up-to-100ml"},
+            {label: "до 2 л", value:"up-to-2l"},
+            {label: "до 250 мл", value: "up-to-250ml"},
+            {label: "до 500 мл", value: "up-to-500ml"}
+        ]
+        }
+    ] %}
+    <button type="button" class="btn_open-sidebar"></button>
+    <aside class="catalog__sidebar">
+        <button class="btn_close">
+            <img src="images/icons/btn-close.svg" alt="Закрити сайтбар з фільтрами">
+        </button>
+        <form action="/catalog" method="GET" class="catalog-filters">
+
+            <fieldset class="catalog-filter">
+                <div class="price-filter">
+                    <div class="price-filter__header">
+                        <legend>Ціна</legend>
+                        <div class="price-filter__values">
+                            від <span id="price-min">0</span> до <span id="price-max">5000</span><span
+                                    class="catalog-currency">грн</span>
+                        </div>
+                    </div>
+
+                    <div class="price-filter__slider" id="price-slider"></div>
+                </div>
+            </fieldset>
+
+            {% for filter in filters %}
+                <fieldset class="catalog-filter">
+                    <legend>
+                        <a href="#"
+                           class="catalog-filter__heading catalog-filter__heading_toggle"
+                           data-toggle="collapse"
+                           data-target="#{{ filter.name }}">{{ filter.title }}</a>
+                    </legend>
+                    <div class="catalog-filter__content collapse" id="{{ filter.name }}">
+                        {% for item in filter.items %}
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="{{ filter.name }}" value="{{ item.value }}"
+                                       class="custom-checkbox__input">
+                                <span class="custom-checkbox__box"></span>
+                                <span class="custom-checkbox__label">{{ item.label }}</span>
+                            </label>
+
+                        {% endfor %}
+                    </div>
+                </fieldset>
+            {% endfor %}
+
+            <button type="submit" class="btn btn_primary btn_submit">
+                Застосувати фільтри
+            </button>
+
+            <button type="reset" class="btn btn_secondary btn_gold">Очистити фільтри</button>
+
+        </form>
+    </aside>
+{% endmacro %}
+

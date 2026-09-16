@@ -1,0 +1,28 @@
+@use "../../../node_modules/nice-select2/dist/css/nice-select2";
+@use "../base/mixins";
+@use "../base/variables";
+
+.sort{
+  display: inline-flex;
+}
+.sort__select {
+  font-family: Inter;
+  font-weight: 400;
+  color: #78560C;
+  border: none;
+  height: 24px;
+  line-height: 1.7;
+}
+.nice-select:after {
+  border-bottom: 1.5px solid #78560C;
+  border-right: 1.5px solid #78560C;
+}
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+  background-color: #EDECE8;
+}
+.nice-select .option{
+  font-weight: 300;
+}
+.nice-select .nice-select-dropdown{
+  overflow-y: auto;
+}

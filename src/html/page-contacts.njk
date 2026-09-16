@@ -1,0 +1,96 @@
+`{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}Контакти — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-blog{% endblock %}
+
+{% block content %}
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="section__title section__title_xl">Зв'яжися з нами</h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+        {{ breadcrumbs ([
+            {title: "Контакти"}
+        ]) }}
+    </div>
+
+    <section class="section-contacts">
+        <div class="container">
+            <h2 class="title_sm">Контактна інформація</h2>
+            <div class="section__text">
+                Якщо у Вас виникли запитання або цікавість до співпраці, Ви можете надіслати нам листа скориставшись
+                контактною формою або ж зв’язатися з нами будь-яким іншим зручним способом.
+            </div>
+            <div class="section-contacts__row">
+                <div class="section-contacts__col section-contacts__thumb">
+                    <img src="images/content/contact-pg-img.png" alt="">
+                </div>
+                <div class="section-contacts__col">
+                    <form action="" method="post" class="form-contacts">
+                        <div class="form-fields">
+                            <div class="form__group">
+                                <label for="contact_name" class="label">ПІБ</label>
+                                <input id="contact_name" class="input" type="text" name="contact_name"
+                                       autocomplete="given-name">
+                            </div>
+                            <div class="form__group">
+                                <label for="contact_email" class="label">Email</label>
+                                <input id="contact_email" class="input" type="email" name="contact_email"
+                                       autocomplete="email">
+                            </div>
+                            <div class="form__group">
+                                <label class="label">Телефон</label>
+                                <input id="contact_phone" class="input" type="tel" name="contact_phone"
+                                       autocomplete="tel">
+                            </div>
+                            <textarea id="order_comment" name="contact_description" rows="10" cols="10"
+                                      placeholder="Ваше повідомлення"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn_primary contact-submit">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+            <div class="section-contacts__row">
+                <div class="section-contacts__col contact-container">
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <h3 class="info-title">Адреса</h3>
+                            <p class="info-text">м. Львів, <br>
+                                вул. Академіка Андрія Сахарова, 82</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3 class="info-title">Телефон</h3>
+                            <a href="tel:+380676307045" class="info-text">+380676307045</a>
+                        </div>
+
+                        <div class="info-block">
+                            <h3 class="info-title">Email</h3>
+                            <a href="mailto:artplate.lviv@gmail.com" class="info-text">artplate.lviv@gmail.com</a>
+                        </div>
+
+                        <div class="info-block">
+                            <h3 class="info-title">Робочі години</h3>
+                            <p class="info-text">Понеділок – П'ятниця: 9:00 – 18:00</p>
+                            <p class="info-note">В умовах війни, будь ласка, попереджайте нас завчасно про ваш візит,
+                                сконтактувавшись за номером +380676307045 Ірина.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-contacts__col">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.241167464985!2d24.014648006791344!3d49.820155645531194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae733ad57d9bf%3A0x5e6efffbdab53f4e!2z0LzQsNCz0LDQt9C40L0g0L_QvtGB0YPQtNGDIEFydC1QbGF0ZQ!5e0!3m2!1suk!2sua!4v1789165766718!5m2!1suk!2sua"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

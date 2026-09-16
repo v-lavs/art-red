@@ -1,0 +1,108 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Про нас — {{ siteName }}{% endblock %}
+
+{% block content %}
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="section__title section__title_xl">Аrt Plate – найкраще співвідношення <br>
+                    ціни та якості</h1>
+            </div>
+            <div class="page-banner__thumb">
+                <img src="images/content/about-img.png" alt="Світлина нашої команди">
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+        {{ breadcrumbs ([
+            {title: "Про нас"}
+        ]) }}
+    </div>
+    <section class="section-about">
+        <div class="container">
+            <div class="about ">
+                <div class="about__tagline">Art Plate — дистриб’юторська компанія, що пропонує посуд, прибори та
+                    аксесуари для HoReCa та Home Line.
+                </div>
+                <div class="about__text">
+                    Ми допомагаємо створювати стильні та функціональні рішення для закладів і дому, поєднуючи широкий
+                    вибір продукції, якість та професійний супровід.
+                </div>
+            </div>
+            <dl class="company-values">
+                <div class="company-values__row">
+                    <dt class="company-values__title">Наша місія</dt>
+                    <dd class="company-values__text">Забезпечувати заклади та клієнтів якісним посудом і професійними
+                        рішеннями, які допомагають створювати бездоганний сервіс, комфорт і естетику в кожній деталі.
+                    </dd>
+                </div>
+
+                <div class="company-values__row">
+                    <dt class="company-values__title">Наша візія</dt>
+                    <dd class="company-values__text">Бути надійним партнером та провідним експертом у сфері комплектації
+                        закладів HoReCa, пропонуючи найкращі світові бренди, сучасні тенденції та сервіс, що перевершує
+                        очікування клієнтів.
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+    <section class="section-advantages">
+        <div class="container">
+            {% set advantages = [
+                {
+                    title: "Широкий асортимент",
+                    description: "Понад 10 000 найменувань продукції від 50 виробників дозволяють нам підбирати рішення для закладів будь-якого формату та бюджету — від економ-класу до преміум-сегменту."
+                },
+                {
+                    title: "Комплектація закладів",
+                    description: "Ми допомагаємо рестораторам реалізовувати проєкти будь-якої складності: від підбору базового посуду до повного оснащення закладу перед відкриттям."
+                },
+                {
+                    title: "Індивідуальний підхід",
+                    description: "Кожен проєкт ми розглядаємо окремо, враховуючи концепцію закладу, особливості інтер'єру, меню, формат обслуговування та кількість посадкових місць."
+                },
+                {
+                    title: "Актуальні рішення",
+                    description: "Ми постійно відстежуємо нові тенденції ринку, оновлюємо асортимент і пропонуємо клієнтам сучасні рішення, що відповідають актуальним потребам індустрії.
+"
+                },
+                {
+                    title: "Поставки від виробників",
+                    description: "Організовуємо постачання продукції безпосередньо з фабрик, що дозволяє розширювати вибір та знаходити оптимальні рішення навіть для нестандартних запитів."
+                },
+                {
+                    title: "Надійні бренди",
+                    description: "Ми співпрацюємо лише з перевіреними виробниками, продукція яких відповідає високим стандартам якості, зносостійкості та довговічності.
+"
+                }
+            ] %}
+
+            <ul class="advantages">
+                {% for item in advantages %}
+                    <li class="advantages__item">
+                        <h3 class="advantages__title">{{ item.title }}</h3>
+
+                        <div class="advantages__description">{{ item.description }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <section class="section-why-choose">
+        <div class="container">
+            <h2 class="title_md">Чому обирають Art Plate:</h2>
+
+            <ul>
+                <li>Асортимент формується згідно заявкам клієнтів: зі складу та під замовлення</li>
+                <li>У нас відсутня мінімальна сума замовлення</li>
+                <li>Замовлення формується оперативно </li>
+                <li>Клієнт може отримати будь-які консультації, що стосуються посуду та комплектацій</li>
+                <li>В наявності зразки, які можна оглянути</li>
+                <li>Індивідуальний підхід до клієнта;</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

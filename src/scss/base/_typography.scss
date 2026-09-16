@@ -1,0 +1,78 @@
+@use "mixins";
+@use "variables";
+// Typography
+
+
+strong{
+  font-weight: 600;
+}
+.page-title {
+  font-family: variables.$secondary-font;
+  font-weight: 300;
+  font-size: 55px;
+  line-height: 1.35;
+  letter-spacing: 1.46px;
+  color: #000000;
+}
+
+.section__title {
+  font-family: variables.$secondary-font;
+  font-weight: 300;
+  line-height: 1.35;
+}
+.section__title_xl{
+  font-size: 55px;
+  letter-spacing: 2.21px;
+}
+.section__title_md{
+  font-size: 45px;
+  letter-spacing: 1.46px;
+}
+.section__title_sm {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.40;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.title_md{
+  font-size: 45px;
+  line-height: 1.3;
+}
+.title_sm{
+  font-size: 24px;
+  font-weight: 400;
+}
+.text {
+  &_xl {
+
+  }
+
+  &_md {
+    font-size: 20px;
+  }
+
+  &_sm {
+
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+@include mixins.respond-to(variables.$lg) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}

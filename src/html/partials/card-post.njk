@@ -1,0 +1,21 @@
+<li class="card-post">
+
+    <a href="{{ post.url }}" class="card-post__thumb">
+        <img src="{{ post.image }}" alt="" class="card-post__img">
+    </a>
+
+    <div class="card-post__content">
+        <div class="card-post__date">{{ post.date }}</div>
+        <a href="{{ post.url }}">
+            <h3 class="card-post__title">{{ post.title }}</h3>
+        </a>
+
+        <div class="card-post__text">{{ post.text }}</div>
+
+        <a href="single-post.html" class="btn btn_primary">
+            Детальніше
+        </a>
+    </div>
+
+</li>
+

@@ -1,0 +1,65 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.price-filter__slider {
+  height: 5px;
+}
+
+.price-filter__slider .noUi-target {
+  border: 0;
+  box-shadow: none;
+  background:rgba(241, 246, 251, .4);
+}
+
+.price-filter__slider .noUi-connect {
+  background: #78560C;
+}
+
+.price-filter__slider .noUi-handle {
+  width: 12px;
+  height: 12px;
+  right: 0;
+  top: -5px;
+
+  border: 0;
+  border-radius: 50%;
+  background: #78560C;
+  box-shadow: none;
+
+  cursor: pointer;
+}
+
+.price-filter__slider .noUi-handle::before,
+.price-filter__slider .noUi-handle::after {
+  display: none;
+}
+
+.price-filter {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 3px 3px 0;
+    color: #AFBACC;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0;
+  }
+}
+.noUi-connects{
+  background-color: #EDECE8;
+}
+.catalog-currency {
+  color: #102941;
+  padding-right: 3px;
+}
+
+#price-min,
+#price-max {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  padding: 0 7px;
+  color: #102941;
+}

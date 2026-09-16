@@ -1,0 +1,14 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.page-products{
+
+}
+.section-products{
+  padding-bottom: 104px;
+}
+.cat-products-list{
+  display: grid;
+  gap: 48px 20px;
+  grid-template-columns: repeat(3, 1fr);
+}

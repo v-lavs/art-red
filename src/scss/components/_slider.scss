@@ -1,0 +1,52 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.splide__arrows{
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 100px;
+}
+
+.splide__arrow--next {
+  right: 0;
+}
+.splide__arrow--prev{
+  left: -0;
+}
+
+.splide__arrow {
+  background-color: transparent;
+  border-radius: 0;
+  height: 12px;
+  width: 35px;
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+}
+
+.splide__arrow svg {
+  fill: #78560C;
+  width: 100%;
+  height: auto;
+
+}
+
+.splide-custom-nav{
+  position: relative;
+  .splide{
+    position: static;
+  }
+}
+
+.slider-progress {
+  background: #F0F2F1;
+  height: 3px;
+  margin: 60px 0 64px;
+}
+
+.slider-progress__bar {
+  background: #78560C;
+  height: 3px;
+  transition: width 400ms ease;
+  width: 0;
+}

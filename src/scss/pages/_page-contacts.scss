@@ -1,0 +1,102 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.section-contacts {
+  padding-bottom: 100px;
+
+  .title_sm {
+    color: #78560C;
+    line-height: 2;
+    margin-bottom: 8px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+    padding-top: 100px;
+  }
+
+  &__col {
+    width: 50%;
+  }
+
+  &__thumb {
+    //background-repeat: no-repeat;
+    //background-position: 0 0;
+    //background-size: cover;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      //height: auto;
+    }
+  }
+  .section__text{
+    letter-spacing: 0;
+  }
+}
+
+.form-contacts {
+  color: #78560C;
+  font-size: 16px;
+
+  .label {
+    font-size: 16px;
+  }
+
+  textarea {
+    max-height: 121px;
+  }
+
+  ::placeholder {
+    font-size: 16px;
+  }
+
+  .form-fields {
+    padding-bottom: 24px;
+  }
+}
+
+.contact-submit {
+  margin-left: auto;
+}
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 61.15%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+}
+
+.info-block {
+  line-height: 1.43;
+  margin-bottom: 32px;
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info-title {
+  font-family: variables.$main-font;
+  font-weight: 500;
+  font-size: 16px;
+  color: #78560C;
+  margin-bottom: 8px;
+  line-height: 1.43;
+}

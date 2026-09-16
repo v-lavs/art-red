@@ -1,0 +1,80 @@
+// Header
+@use "../base/mixins";
+@use "../base/variables";
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 1px solid #78560C;
+  background-color: #FEFEFC;
+  z-index: 1000;
+  &__nav {
+    position: relative;
+    padding: 22px 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #78560C;
+    width: var(--width, 0px);
+    transform: translateX(var(--left, 0px));
+    transition: transform 0.3s ease, width 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__cart {
+  position: relative;
+  margin-left: 16px;
+}
+
+.header__cart,
+.header__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition: .35s;
+  }
+  &:hover,
+  &:focus{
+    img{
+      transform: scale(1.15);
+    }
+  }
+}
+.header__cart-count{
+  font-size: 12px;
+  position: absolute;
+  right:0;
+  top: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.h-search,
+.btn_burger,
+.btn_close {
+  display: none;
+}

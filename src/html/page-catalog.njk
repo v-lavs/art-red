@@ -1,0 +1,182 @@
+{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}Каталог — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-catalog{% endblock %}
+
+{% block content %}
+    {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+
+    <div class="container">
+        {{ breadcrumbs ([
+            {title: "Товари",  url: "page-products.html"},
+            {title: "Столовий посуд",  url: "page-catalog.html"},
+            {title: "Тарілки плоскі"}
+        ]) }}
+    </div>
+    <section class="section-catalog">
+        <div class="container">
+            <h2 class="section__title section__title_sm">столовий посуд</h2>
+            <nav class="catalog-categories" aria-label="Категорії товарів">
+                <ul class="category-list">
+                    <li class="category-list__item is-active"><a href="#">Тарілки плоскі</a></li>
+                    <li class="category-list__item"><a href="#">Тарілки глибокі</a></li>
+                    <li class="category-list__item"><a href="#">Салатники та боули</a></li>
+                    <li class="category-list__item"><a href="#">Посуд для подачі та сервірування</a></li>
+                    <li class="category-list__item"><a href="#">Чашки, кухлі та блюдця</a></li>
+                    <li class="category-list__item"><a href="#">Чайники та цукорниці</a></li>
+                    <li class="category-list__item"><a href="#">Кавники та молочники</a></li>
+                </ul>
+            </nav>
+            <div class="catalog__inner">
+                {{ catalogSidebar(filters) }}
+
+                <section class="catalog__products">
+                    <div class="catalog__toolbar">
+                        <label class="sort">
+                            <select class="sort__select js-custom-select right">
+                                <option value="by-rating" selected>За рейтингом</option>
+                                <option value="from-cheap-to-expensive">Від дешевих до дорогих</option>
+                                <option value="from-expensive-to-cheap">Від дорогих до дешевих</option>
+                            </select>
+                        </label>
+                    </div>
+                    {% set products = [
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "single-product.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: "30",
+                            discount_cost: "716"
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        },
+                        {
+                            image: "images/content/product-carts/product-1.png",
+                            title: "Сет порцелянових банок для подачі закусок",
+                            url: "product-single.html",
+                            text: "Посуд для подачі та запікання",
+                            brand: "Abert",
+                            cost: "1023",
+                            discount: null,
+                            discount_cost: null
+
+                        }
+                    ] %}
+
+                    <ul class="products-grid">
+
+                        {% for product in products %}
+                            {% include "partials/card-product.njk" %}
+                        {% else %}
+                            <li>
+                                <p>В даній категорії товару не знайдено.</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="wrap-pagination">
+                        {% include "partials/pagination.njk" %}
+                    </div>
+                </section>
+            </div>
+
+            <div class="page-description dynamic-content">
+                <p>Серед новинок – Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить
+                    для мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який
+                    стіл і зроблять подачу страв ще більш вишуканою.</p>
+                <p>Серед новинок – Lyra, що має теплі природні відтінки, Cascade. Колекція Smoke ідеально підходить
+                    для мінімалістичних інтер’єрів завдяки простоті ліній та м’яким кольорам.</p>
+                <p>Усі тарілки виготовлені з високоякісного фарфору Super Vitrified, що забезпечує довговічність і
+                    стійкість до подряпин. Вони підходять для використання в посудомийних машинах та мікрохвильових
+                    печах.</p>
+                <p>Нові колекції Churchill – це поєднання естетики та функціональності, які прикрасять будь-який
+                    стіл і зроблять подачу страв ще більш вишуканою.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

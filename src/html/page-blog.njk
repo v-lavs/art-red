@@ -1,0 +1,81 @@
+`{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}Блог — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-blog{% endblock %}
+
+{% block content %}
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="section__title section__title_xl">Блог</h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+        {{ breadcrumbs ([
+            {title: "Блог"}
+        ]) }}
+    </div>
+    {% set posts = [
+        {
+            image: "images/content/blog-card-img.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        },
+        {
+            image: "images/content/blog-card-img.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        },
+        {
+            image: "images/content/blog-card-img2.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        },
+        {
+            image: "images/content/blog-card-img2.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        },
+        {
+            image: "images/content/blog-card-img.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        },
+        {
+            image: "images/content/blog-card-img2.png",
+            url: "single-post.html",
+            title: "Новинки Весна 2025 від Churchill",
+            date:"17.02.2025",
+            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+        }
+    ] %}
+    <section class="section-blog">
+        <div class="container">
+            <div class="blog-filter">
+                <a href="#" class="blog-filter__link is-active">Новини</a>
+                <a href="#" class="blog-filter__link">Публікації</a>
+                <a href="#" class="blog-filter__link">Відео</a>
+            </div>
+
+            <ul class="blog-list">
+                {% for post in posts %}
+                    {% include "partials/card-post.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

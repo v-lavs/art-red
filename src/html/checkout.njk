@@ -1,0 +1,196 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Оформлення замовлення — {{ siteName }}{% endblock %}
+
+{% block main_class %} checkout {% endblock %}
+
+{% block content %}
+    {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+
+    <div class="container">
+        {{ breadcrumbs ([
+            {title: "Оформлення замовлення"}
+        ]) }}
+    </div>
+
+    <div class="container d-flex">
+
+        <section class="checkout__form">
+            <h1 class="checkout__title section__title section__title_sm">ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h1>
+
+            <form class="checkout-form" action="" method="post">
+
+                <!-- 1. Особисті дані -->
+                <section class="checkout-section">
+                    <h2 class="checkout-section__title">Особисті дані</h2>
+
+                    <div class="form-fields">
+                        <div class="form__group">
+                            <label class="label">Ім'я *</label>
+                            <input class="input" type="text" name="billing_first_name" autocomplete="given-name"
+                                   required>
+                        </div>
+                        <div class="form__group">
+                            <label class="label">Прізвище *</label>
+                            <input class="input" type="text" name="billing_last_name" autocomplete="family-name"
+                                   required>
+                        </div>
+                        <div class="form__group">
+                            <label class="label">Телефон *</label>
+                            <input class="input" type="tel" name="billing_phone" autocomplete="tel" required>
+                        </div>
+                        <div class="form__group">
+                            <label class="label">Email *</label>
+                            <input class="input" type="email" name="billing_email" autocomplete="email" required>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- 2. Доставка -->
+                <section class="checkout-section">
+
+                    <h2 class="checkout-section__title">Доставка</h2>
+
+                    <div class="delivery-methods">
+                        <label class="custom-checkbox custom-checkbox_radio">
+                            <input type="radio" class="custom-checkbox__input" name="shipping_method"
+                                   value="nova_poshta_branch" checked>
+                            <span class="custom-checkbox__box"></span>
+                            <span class="custom-checkbox__label">Відділення Нової пошти</span>
+                        </label>
+
+                        <label class="custom-checkbox custom-checkbox_radio">
+                            <input type="radio" class="custom-checkbox__input" name="shipping_method"
+                                   value="nova_poshta_locker">
+                            <span class="custom-checkbox__box"></span>
+                            <span class="custom-checkbox__label">Поштомат Нової пошти</span>
+                        </label>
+
+                        <label class="custom-checkbox custom-checkbox_radio">
+                            <input type="radio" class="custom-checkbox__input" name="shipping_method"
+                                   value="nova_poshta_courier">
+                            <span class="custom-checkbox__box"></span>
+                            <span class="custom-checkbox__label">Кур'єром Нової пошти</span>
+                        </label>
+                    </div>
+
+
+                    <div class="delivery">
+
+                        <div class="delivery__city">
+                            <div class="form__group">
+                                <label class="label" for="city">Місто</label>
+                                <input class="input" id="city" type="text" />
+                            </div>
+                            <div class="delivery__popular">
+                                <button type="button">Київ</button>
+                                <button type="button">Львів</button>
+                                <button type="button">Одеса</button>
+                                <button type="button">Дніпро</button>
+                                <button type="button">Харків</button>
+                                <button type="button">Вінниця</button>
+                            </div>
+                        </div>
+
+                        <div class="delivery__branch">
+                            <div class="form__group">
+                                <label class="label" for="branch">Відділення</label>
+                                <input class="input" id="branch" type="text" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="checkout-comment">
+                        <label class="label" for="order_comment">
+                            Коментар до замовлення (необв’язково)
+                        </label>
+
+                        <textarea id="order_comment" name="order_comments" rows="1"
+                                  placeholder="Нотатки до вашого замовлення, наприклад, спеціальні примітки щодо доставки"></textarea>
+                    </div>
+                </section>
+
+
+                <!-- 3. Оплата -->
+                <section class="checkout-section">
+
+                    <h2 class="checkout-section__title">Оплата</h2>
+
+                    <div class="payment-methods">
+                        <label class="custom-checkbox custom-checkbox_radio">
+                            <input type="radio" class="custom-checkbox__input" name="payment_method" value="cod">
+                            <span class="custom-checkbox__box"></span>
+                            <span class="custom-checkbox__label">Накладений платіж</span>
+                        </label>
+
+                        <label class="custom-checkbox custom-checkbox_radio">
+                            <input type="radio" class="custom-checkbox__input" name="payment_method" value="card">
+                            <span class="custom-checkbox__box"></span>
+                            <span class="custom-checkbox__label">Оплата карткою</span>
+                        </label>
+                    </div>
+
+                </section>
+
+
+                <!-- Правила -->
+                <label class="custom-checkbox checkout-terms">
+                    <input type="checkbox" class="custom-checkbox__input" name="terms" required>
+                    <span class="custom-checkbox__box"></span>
+                    <span class="custom-checkbox__label"> Я прочитав(а) і погоджуюся з правилами сайту
+                        <a href="#">правила  та умовами</a></span>
+                </label>
+
+                <button type="submit" class="btn btn_secondary btn_gold checkout-submit">Підтверджую замовлення</button>
+
+            </form>
+        </section>
+
+
+        <!-- Кошик -->
+        <aside class="checkout__cart">
+
+            <h2 class="cart__title section__title section__title_sm">КОШИК</h2>
+
+            <div class="cart__items">
+
+                <article class="cart-item">
+
+                    <img src="/images/product.jpg" alt="" class="cart-item__image">
+
+                    <div class="cart-item__content">
+
+                        <h3 class="cart-item__title">ДЕСЕРТНА ТАРІЛКА 21×21 СМ</h3>
+
+                        <span class="cart-item__price">935 ₴</span>
+
+                        <div class="cart-item__quantity">
+                            <button type="button">−</button>
+                            <span>2</span>
+                            <button type="button">+</button>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="cart-item__remove" aria-label="Видалити товар"> 🗑 </button>
+                </article>
+            </div>
+
+
+            <div class="cart__shipping">
+                <span>Доставка</span>
+                <span>по тарифам перевізника</span>
+            </div>
+
+            <div class="cart__total">
+                <span>Загальна сума замовлення</span>
+                <strong>2805 ₴</strong>
+            </div>
+
+        </aside>
+
+    </div>
+
+{% endblock %}

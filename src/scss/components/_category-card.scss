@@ -1,0 +1,73 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.category-card{
+  max-width: 100%;
+  &:first-of-type,
+  &:nth-of-type(3n + 4){
+    .category-card__body{
+      background-color: #ECE8D8;
+    }
+  }
+  &:nth-of-type(3n + 2),
+  &:nth-of-type(3n + 5) {
+    .category-card__body{
+      background-color: #FFFCEE;
+    }
+  }
+  &:nth-of-type(3n) {
+    .category-card__body {
+      background-color: #FFFDF4;
+    }
+  }
+  &__body{
+    padding: 48px 32px;
+    width: 100%;
+    min-height: 483px;
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__title{
+    font-family: variables.$secondary-font;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #191001;
+    margin-bottom: 20px;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+    line-height: 1.25;
+    color: #78560C;
+    a{
+      display: block;
+      &:hover,
+      &:focus{
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
+  }
+  
+  &__image{
+    position: absolute;
+    display: block;
+    width: 62%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  &__footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 38px;
+  }
+}

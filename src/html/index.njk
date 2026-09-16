@@ -1,0 +1,1343 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Головна — {{ siteName }}{% endblock %}
+{% block main_class %}home{% endblock %}
+
+{% block content %}
+    <section class="section-banner">
+        <div class="splide banner-slider" aria-label="Логотипи партнерів">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide banner-slide">
+                        <img src="images/content/slide-banner-1f.png" class="banner-slide__img" alt="">
+                        <div class="container">
+                            <div class="banner-slide__content">
+                                <h2 class="banner-slide__title">Професійний посуд для вашого бізнесу та дому</h2>
+                                <div class="banner-slide__subtitle">
+                                    Офіційний імпортер. Гарантія якості, сервісне обслуговування та експертний підбір
+                                    під ваші потреби.
+                                </div>
+                                <div class="banner-slide__block-btns">
+                                    <a href="#" class="btn btn_white">HoReCa</a>
+                                    <a href="#" class="btn btn_stroke">Для дому</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide banner-slide">
+                        <video autoplay="" muted="" loop="" playsinline="" class="banner-slide__video"
+                               poster="images/content/poster.png">
+                            <source src="images/video/3-mb.mp4" type="video/mp4">
+                        </video>
+                        <div class="container">
+                            <div class="banner-slide__content">
+                                <h2 class="banner-slide__title">Професійний посуд для вашого бізнесу та дому</h2>
+                                <div class="banner-slide__subtitle">
+                                    Офіційний імпортер. Гарантія якості, сервісне обслуговування та експертний підбір
+                                    під ваші потреби.
+                                </div>
+                                <div class="banner-slide__block-btns">
+                                    <a href="#" class="btn btn_white">HoReCa</a>
+                                    <a href="#" class="btn btn_stroke">Для дому</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-category">
+        <div class="container">
+            <div class="splide-custom-nav">
+                <div class="section__heading">
+                    <h2 class="section__title section__title_sm">Категоріїї товарів</h2>
+                    <div class="splide__arrows custom-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                </div>
+                {% set categories = [
+                    {
+                        title: "столовий посуд",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "page-catalog.html",
+                        items: [
+                        { title: "Тарілки плоскі", url: "#" },
+                        { title: "Тарілки глибокі", url: "#" },
+                        { title: "Соусники", url: "#" },
+                        { title: "Посуд для запікання та подачі", url: "#" },
+                        { title: "Дошки, камені та сланці", url: "#" },
+                        { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                        { title: "Підноси для подачі", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Чайно-кавова група",
+                        img:"images/content/category-card/cat-2.png",
+                        url: "page-catalog.html",
+                        items: [
+                        { title: "Чашки чайні", url: "#" },
+                        { title: "Тарілки глибокі", url: "#" },
+                        { title: "Соусники", url: "#" },
+                        { title: "Посуд для запікання та подачі", url: "#" },
+                        { title: "Дошки, камені та сланці", url: "#" },
+                        { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                        { title: "Підноси для подачі", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Столові прибори",
+                        img:"images/content/category-card/cat-3.png",
+                        url: "page-catalog.html",
+                        items: [
+                        { title: "Виделки", url: "#" },
+                        { title: "Тарілки глибокі", url: "#" },
+                        { title: "Соусники", url: "#" },
+                        { title: "Посуд для запікання та подачі", url: "#" },
+                        { title: "Дошки, камені та сланці", url: "#" },
+                        { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                        { title: "Підноси для подачі", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Сервірування та фуршет",
+                        img:"images/content/category-card/cat-4.png",
+                        url: "page-catalog.html",
+                        items: [
+                        { title: "Серветниці", url: "#" },
+                        { title: "Спецівниці", url: "#" },
+                        { title: "Кошики, хлібниці та фруктівниці", url: "#" },
+                        { title: "Ємності для рідин", url: "#" },
+                        { title: "Цукернички та маслянички", url: "#" },
+                        { title: "Вази", url: "#" },
+                        { title: "Тортівниці та інше", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Скляний барний посуд",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Келихи для вина", url: "#" },
+                        { title: "Келихи для шампанського", url: "#" },
+                        { title: "Бокали для пива", url: "#" },
+                        { title: "Стакани для напоїв та коктейлів", url: "#" },
+                        { title: "Рюмки та шоти", url: "#" },
+                        { title: "Графіни", url: "#" },
+                        { title: "Декантери", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Освітлення",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Світильники", url: "#" },
+                        { title: "Підсвічники", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Барний інвентар",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Келери та відерка", url: "#" },
+                        { title: "Додаткові аксесуари", url: "#" },
+                        { title: "Підноси барні", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Кухонний посуд",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Профіесійні ножі", url: "#" },
+                        { title: "Каструлі", url: "#" },
+                        { title: "Сковорідки", url: "#" },
+                        { title: "Сотейники", url: "#" },
+                        { title: "Миски", url: "#" },
+                        { title: "Гатсроємності", url: "#" },
+                        { title: "Органзайзери для зберігання та інше", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Текстиль",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Плейсмати та ранери", url: "#" },
+                        { title: "Скатертини", url: "#" },
+                        { title: "Прихватки", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Еко посуд",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+
+                    ]
+                    },
+                    {
+                        title: "Обладнання",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+
+                    ]
+                    },
+                    {
+                        title: "Молекулярна кухня",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+
+                    ]
+                    }
+                ] %}
+                <div class="splide category-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for category in categories %}
+                                <li class="category-card splide__slide" style="--card-bg: {{ category.bg }};">
+                                    <div class="category-card__body">
+                                        <h3 class="category-card__title">
+                                            {{ category.title }}
+                                        </h3>
+
+                                        <ul class="category-card__list">
+                                            {% for item in category.items %}
+                                                <li class="category-card__item">
+                                                    <a href="{{ item.url }}">
+                                                        {{ item.title }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% if category.img %}
+                                            <img
+                                                    class="category-card__image"
+                                                    src="{{ category.img }}"
+                                                    alt=""
+                                            >
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="category-card__footer">
+                                        <a href="{{ category.url }}" class="btn btn_primary">
+                                            Переглянути все
+                                        </a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="slider-progress">
+                            <div class="slider-progress__bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# <section class="section-about"> #}
+    <div class="container ">
+        <div class="about ">
+            <div class="about__tagline"><strong>Art Plate</strong> — дистриб’юторська компанія, що пропонує посуд,
+                прибори та
+                аксесуари для HoReCa та Home Line.
+            </div>
+            <div class="about__text">
+                Ми допомагаємо створювати стильні та функціональні рішення для закладів і дому, поєднуючи широкий
+                вибір продукції, якість та професійний супровід.
+            </div>
+        </div>
+
+        <div class="counter-wrap">
+            <ul class="values-list counter">
+                <li class="counter__item">
+                    <div class="counter__number" data-target="100"><span class="num">0</span><span
+                                class="suffix">+</span></div>
+                    <div class="counter__description">європейських брендів</div>
+                </li>
+
+                <li class="counter__item">
+                    <div class="counter__number" data-target="20000"><span class="num">0</span><span
+                                class="suffix">+</span></div>
+                    <div class="counter__description">товарів для сфери <br>
+                        HoReCa
+                    </div>
+                </li>
+
+                <li class="counter__item">
+                    <div class="counter__number" data-target="250"><span class="num">0</span><span
+                                class="suffix">+</span></div>
+                    <div class="counter__description">задоволених клієнтів</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {# </section> #}
+
+    <section class="section section-partners">
+        <div class="container">
+            <h2 class="section__title section__title_sm">Наші клієнти</h2>
+
+            <div class="splide partner-marquee partner-marquee-left" aria-label="Логотипи партнерів">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {% set logos = [
+                            { url: "images/content/partners/partner-1.png", title: "Kilinski" },
+                            { url: "images/content/partners/partner-2.png", title: "Citadel" },
+                            { url: "images/content/partners/partner-3.png", title: "Святий шарбель" },
+                            { url: "images/content/partners/partner-4.png", title: "Edem Resort Collection" },
+                            { url: "images/content/partners/partner-5.png", title: "Cheese Bakery" },
+                            { url: "images/content/partners/partner-6.svg", title: "Мережа пекарень-кондитерських SHOco" }
+                        ] %}
+
+                        {% for item in logos %}
+                            <li class="splide__slide partner-marquee__slide">
+                                <img class="partner-marquee__img" src="{{ item.url }}" alt="{{ item.title }}">
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+            <div class="splide partner-marquee partner-marquee-right" aria-label="Логотипи партнерів">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {% set logos = [
+
+                            { url: "images/content/partners/partner-2.png", title: "Citadel" },
+                            { url: "images/content/partners/partner-4.png", title: "Edem Resort Collection" },
+                            { url: "images/content/partners/partner-5.png", title: "Cheese Bakery" },
+                            { url: "images/content/partners/partner-3.png", title: "Святий шарбель" },
+                            { url: "images/content/partners/partner-1.png", title: "Kilinski" },
+                            { url: "images/content/partners/partner-6.svg", title: "Мережа пекарень-кондитерських SHOco" }
+                        ] %}
+
+                        {% for item in logos %}
+                            <li class="splide__slide">
+                                <img src="{{ item.url }}" alt="{{ item.title }}">
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-about">
+        <div class="container">
+            <dl class="company-values">
+                <div class="company-values__row">
+                    <dt class="company-values__title">Наша місія</dt>
+                    <dd class="company-values__text">Забезпечувати заклади та клієнтів якісним посудом і професійними
+                        рішеннями, які допомагають створювати бездоганний сервіс, комфорт і естетику в кожній деталі.
+                    </dd>
+                </div>
+
+                <div class="company-values__row">
+                    <dt class="company-values__title">Наша візія</dt>
+                    <dd class="company-values__text">Бути надійним партнером та провідним експертом у сфері комплектації
+                        закладів HoReCa, пропонуючи найкращі світові бренди, сучасні тенденції та сервіс, що перевершує
+                        очікування клієнтів.
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <section class="section section-fag">
+        <div class="container">
+            <h2 class="section__title section__title_sm">FAQ</h2>
+
+            <div class="accordion accordion-services">
+                <div class="accordion__item">
+                    <header class="accordion__header">
+                        <h3 class="accordion__header-title"> Чим відрізняється PVD-покриття? </h3>
+                        <span class="toggle-collapse"></span>
+                    </header>
+                    <div class="accordion-collapse">
+                        <div class="accordion-collapse__content">
+                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+                            of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+                            Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
+                            word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from
+                            sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+                            Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very
+                            popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+                            amet..", comes from a line in section 1.10.32.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion__item">
+                    <header class="accordion__header">
+                        <h4 class="accordion__header-title">Що таке брашування приборів? </h4>
+                        <span class="toggle-collapse"></span>
+                    </header>
+                    <div class="accordion-collapse">
+                        <div class="accordion-collapse__content">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since 1966, when designers at Letraset and
+                            James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero
+                            translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has
+                            survived not only many decades, but also the leap into electronic typesetting, remaining
+                            essentially unchanged. It was popularised thanks to these sheets and more recently with
+                            desktop publishing software like Aldus PageMaker and Microsoft Word including versions of
+                            Lorem Ipsum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion__item">
+                    <header class="accordion__header">
+                        <h4 class="accordion__header-title">Яка сталь у приборах Abert?</h4>
+                        <span class="toggle-collapse"></span>
+                    </header>
+                    <div class="accordion-collapse">
+                        <div class="accordion-collapse__content">
+                            The standard chunk of Lorem Ipsum used since 1966 is reproduced below for those interested.
+                            Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                            reproduced in their exact original form, accompanied by English versions from the 1914
+                            translation by H. Rackham.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-brands">
+        <div class="container">
+            <div class="splide-custom-nav">
+                <div class="section__heading">
+                    <h2 class="section__title section__title_sm">Бренди</h2>
+                    <div class="h-sp-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                </div>
+                {% set brands = [
+                    { title: "100%chief", url: "page-brand-products.html", img: "images/content/brands/100chief.png" },
+                    { title: "Pordamsa", url: "#", img: "images/content/brands/pordamsa.png" },
+                    { title: "Churhill", url: "#", img: "images/content/brands/churhill.png" },
+                    { title: "Zeher", url: "#", img: "images/content/brands/zeher.png" },
+                    { title: "Abert", url: "page-brand-products.html", img: "images/content/brands/abert.png" },
+                    { title: "CHIC tableware", url: "#", img: "images/content/brands/dhd.png" },
+                    { title: "Pentole Agneli", url: "#", img: "images/content/brands/pentole.png" },
+                    { title: "Arcoroc", url: "#", img: "images/content/brands/arcoroc.png" },
+                    { title: "CNB Enterprises", url: "#", img: "images/content/brands/cnb-enterprises.png" },
+                    { title: "Comas", url: "#", img: "images/content/brands/comas.png" },
+                    { title: "Candola", url: "#", img: "images/content/brands/candola.png" },
+                    { title: "Aps", url: "#", img: "images/content/brands/aps.png" },
+                    { title: "Eternum", url: "#", img: "images/content/brands/eternum.png" },
+                    { title: "Fortessa", url: "#", img: "images/content/brands/fortessa.png" },
+                    { title: "F2d", url: "#", img: "images/content/brands/f2d.png" },
+                    { title: "Id Fine", url: "#", img: "images/content/brands/id-fine.png" },
+                    { title: "Cosy & Trendy", url: "#", img: "images/content/brands/cosy-trendy.png" },
+                    { title: "Ariane", url: "#", img: "images/content/brands/riane.png" },
+                    { title: "Fine Dine", url: "#", img: "images/content/brands/fine-dine.png" },
+                    { title: "Krosno", url: "#", img: "images/content/brands/crosno.png" },
+                    { title: "Koziol", url: "#", img: "images/content/brands/koziol.png" },
+                    { title: "Lubiana", url: "#", img: "images/content/brands/lubiana.png" },
+                    { title: "LAV", url: "#", img: "images/content/brands/lav.png" },
+                    { title: "Le Coq Porcelaine", url: "#", img: "images/content/brands/le-coq-porcelaine.png" },
+                    { title: "Libbey", url: "#", img: "images/content/brands/libbey.png" },
+                    { title: "Tognana", url: "#", img: "images/content/brands/tognana.png" },
+                    { title: "Chikio", url: "#", img: "images/content/brands/chikio.png" },
+                    { title: "Olipac", url: "#", img: "images/content/brands/olipac.png" },
+                    { title: "Vista Alegre", url: "#", img: "images/content/brands/vista-alegre.png" },
+                    { title: "Vicrila", url: "#", img: "images/content/brands/vicrila.png" },
+                    { title: "Iнші бренди", url: "#", img: "images/content/brands/inshi-brendy.png" },
+                    { title: "LuigiBormioli", url: "#", img: "images/content/brands/luigi-bormioli.png" },
+                    { title: "Solex", url: "#", img: "images/content/brands/solex.png" },
+                    { title: "Schott Swiesel", url: "#", img: "images/content/brands/schott-swiesel.png" },
+                    { title: "Wood Food", url: "#", img: "images/content/brands/wood-food.png" },
+                    { title: "TableCraft", url: "#", img: "images/content/brands/table-craft.png" },
+                    { title: "Salt & Pepper", url: "#", img: "images/content/brands/salt-pepper.png" },
+                    { title: "Sumisura", url: "#", img: "images/content/brands/sumisura.png" },
+                    { title: "Linddna", url: "#", img: "images/content/brands/linddna.png" },
+                    { title: "Porland Porselen", url: "#", img: "images/content/brands/porland.png" }
+                ] %}
+
+                <div class="splide brands-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list brands__list">
+                            {% for item in brands %}
+                                <li class="brands__item splide__slide">
+                                    <a href="{{ item.url }}">
+                                        <img src="{{ item.img }}" alt="{{ item.title }}">
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="slider-progress">
+                            <div class="slider-progress__bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="page-brands.html" class="btn btn_primary">
+                Переглянути все
+            </a>
+        </div>
+    </section>
+
+    <section class="section section-product-home">
+        <div class="container">
+            <div class="products-tabs js-tabs" data-type="products">
+                <div class="splide-custom-nav">
+                    <div class="splide__arrows custom-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                    <div class="tabs__nav">
+                        <button class="products-tabs__tab js-tabs__tab is-active" data-tab="new">
+                            Новинки
+                        </button>
+
+                        <button class="products-tabs__tab js-tabs__tab" data-tab="bestsellers">
+                            Бестселери
+                        </button>
+
+                        <button class="products-tabs__tab js-tabs__tab" data-tab="sale">
+                            Sale
+                        </button>
+                    </div>
+
+                    <div class="products-tabs__content">
+                        <!-- Новинки -->
+                        <div class="products-tabs__slider js-tabs__panel is-active" data-slider="new">
+
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    {% set products = [
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі
+                                             та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Вок антипригарний Abert",
+                                            url: "product-single.html",
+                                            text: "Сковорідки",
+                                            cost: "3135",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Дитячий набір від Sambonet",
+                                            url: "product-single.html",
+                                            text: "Тарілки глибокі, тарілки плоскі",
+                                            cost: "1995",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Набір ножів для сиру від Abert",
+                                            url: "product-single.html",
+                                            text: "Набори столових приборів, ножі, ABERT",
+                                            cost: "2550",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-5.png",
+                                            title: "Каструля від Cu Artigana",
+                                            url: "product-single.html",
+                                            text: " ",
+                                            cost: "4300",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        }
+                                    ] %}
+                                    <ul class="splide__list">
+                                        {% for product in products %}
+                                            <li class="splide__slide card-product {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+
+                                                {# Бейдж знижки #}
+                                                {% if product.discount is defined and product.discount is not null %}
+                                                    <span class="card-product__badge">-{{ product.discount }}%</span>
+                                                {% endif %}
+
+                                                {# Зображення товару #}
+                                                <a href="{{ product.url }}" class="card-product__img-wrap">
+                                                    <img
+                                                            src="{{ product.image }}"
+                                                            alt="{{ product.title }}"
+                                                            class="card-product__img"
+                                                    >
+                                                </a>
+
+                                                {# Назва товару #}
+                                                <a href="{{ product.url }}">
+                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                </a>
+
+                                                {# Категорія / опис #}
+                                                <div class="card-product__sub-title">{{ product.text }}</div>
+
+                                                {# Ціна #}
+                                                <div class="card-product__price-block">
+                                                    {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                                        <span class="card-product__cost card-product__cost_old">
+                                                    {{ product.cost }} ₴
+                                                </span>
+
+                                                        <span class="card-product__cost card-product__cost_new">
+                                                    {{ product.discount_cost }} ₴
+                                                </span>
+                                                    {% else %}
+                                                        <span class="card-product__cost">
+                                                    {{ product.cost }} ₴
+                                                </span>
+                                                    {% endif %}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="#" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                            {# </div> #}
+                        </div>
+                        <!-- Бестселери -->
+                        <div class="products-tabs__slider js-tabs__panel" data-slider="bestsellers">
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    {% set products = [
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі
+                                             та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Вок антипригарний Abert",
+                                            url: "product-single.html",
+                                            text: "Сковорідки",
+                                            cost: "3135",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Дитячий набір від Sambonet",
+                                            url: "product-single.html",
+                                            text: "Тарілки глибокі, тарілки плоскі",
+                                            cost: "1995",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Набір ножів для сиру від Abert",
+                                            url: "product-single.html",
+                                            text: "Набори столових приборів, ножі, ABERT",
+                                            cost: "2550",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-5.png",
+                                            title: "Каструля від Cu Artigana",
+                                            url: "product-single.html",
+                                            text: " ",
+                                            cost: "4300",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        }
+                                    ] %}
+                                    <ul class="splide__list">
+                                        {% for product in products %}
+                                            <li class="splide__slide card-product {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+
+                                                {# Бейдж знижки #}
+                                                {% if product.discount is defined and product.discount is not null %}
+                                                    <span class="card-product__badge">-{{ product.discount }}%</span>
+                                                {% endif %}
+
+                                                {# Зображення товару #}
+                                                <a href="{{ product.url }}" class="card-product__img-wrap">
+                                                    <img
+                                                            src="{{ product.image }}"
+                                                            alt="{{ product.title }}"
+                                                            class="card-product__img"
+                                                    >
+                                                </a>
+
+                                                {# Назва товару #}
+                                                <a href="{{ product.url }}">
+                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                </a>
+
+                                                {# Категорія / опис #}
+                                                <div class="card-product__sub-title">{{ product.text }}</div>
+
+                                                {# Ціна #}
+                                                <div class="card-product__price-block">
+                                                    {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                                        <span class="card-product__cost card-product__cost_old">
+                                                    {{ product.cost }} ₴
+                                                </span>
+
+                                                        <span class="card-product__cost card-product__cost_new">
+                                                    {{ product.discount_cost }} ₴
+                                                </span>
+                                                    {% else %}
+                                                        <span class="card-product__cost">
+                                                    {{ product.cost }} ₴
+                                                </span>
+                                                    {% endif %}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="#" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                        </div>
+                        <!-- Sale -->
+                        <div class="products-tabs__slider js-tabs__panel" data-slider="sale">
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    {% set products = [
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: "30",
+                                            discount_cost: "716"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Вок антипригарний Abert",
+                                            url: "product-single.html",
+                                            text: "Сковорідки",
+                                            cost: "3135",
+                                            discount: "25",
+                                            discount_cost: "2351"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Дитячий набір від Sambonet",
+                                            url: "product-single.html",
+                                            text: "Тарілки глибокі, тарілки плоскі",
+                                            cost: "1995",
+                                            discount: "30",
+                                            discount_cost: "1934"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Набір ножів для сиру від Abert",
+                                            url: "product-single.html",
+                                            text: "Набори столових приборів, ножі, ABERT",
+                                            cost: "2550",
+                                            discount: "25",
+                                            discount_cost: "767"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-5.png",
+                                            title: "Каструля від Cu Artigana",
+                                            url: "product-single.html",
+                                            text: " ",
+                                            cost: "4300",
+                                            discount: "15",
+                                            discount_cost: "3655"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: "30",
+                                            discount_cost: "716"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-2.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: "25",
+                                            discount_cost: "2351"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-3.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: "30",
+                                            discount_cost: "1934"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-4.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            cost: "1023",
+                                            discount: "25",
+                                            discount_cost: "767"
+
+                                        }
+                                    ] %}
+                                    <ul class="splide__list">
+                                        {% for product in products %}
+                                            <li class="splide__slide card-product {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+
+                                                {# Бейдж знижки #}
+                                                {% if product.discount is defined and product.discount is not null %}
+                                                    <span class="card-product__badge">-{{ product.discount }}%</span>
+                                                {% endif %}
+
+                                                {# Зображення товару #}
+                                                <a href="{{ product.url }}" class="card-product__img-wrap">
+                                                    <img
+                                                            src="{{ product.image }}"
+                                                            alt="{{ product.title }}"
+                                                            class="card-product__img"
+                                                    >
+                                                </a>
+
+                                                {# Назва товару #}
+                                                <a href="{{ product.url }}">
+                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                </a>
+
+                                                {# Категорія / опис #}
+                                                <div class="card-product__sub-title">{{ product.text }}</div>
+
+                                                {# Ціна #}
+                                                <div class="card-product__price-block">
+                                                    {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                                        <span class="card-product__cost card-product__cost_old">
+                                                    {{ product.cost }} ₴
+                                                </span>
+
+                                                        <span class="card-product__cost card-product__cost_new">
+                                                    {{ product.discount_cost }} ₴
+                                                </span>
+                                                    {% else %}
+                                                        <span class="card-product__cost">
+                                                    {{ product.cost }} ₴
+                                                </span>
+                                                    {% endif %}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="page-sale.html" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="block-letter">
+            <div class="block-letter__part block-letter__part_left">
+                <div class="text">
+                    Підпишіться на нашу розсилку для сегменту <strong class="text_md">HoReCa</strong>, щоб першими отримувати <strong>спеціальні
+                        пропозиції</strong>, вигідні
+                    умови співпраці та ексклюзивні комерційні пропозиції.
+                </div>
+                <form action="" method="post" class="form-letter">
+                    <div class="form__group">
+                        <label for="contact_email" class="label">Email</label>
+                        <input id="contact_email" class="input" type="email" name="contact_email"
+                               autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn btn_primary contact-submit">Підписатись</button>
+                </form>
+            </div>
+            <div class="block-letter__part block-letter__part_right">
+                <div class="discount-info">
+                    <p class="discount-info__title">Підпишіться на наш <a href="#"><strong>Instagram</strong></a> і отримайте знижку!</p>
+
+                    <p>Як отримати знижку?</p>
+                    <ul>
+                        <li>Підпишіться на нашу сторінку в інстаграмі</li>
+                        <li>У коментарі до замовлення напишіть слово "Інстаграм" і адресу вашого профілю.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-home-blog">
+        <div class="container">
+            <div class="js-tabs" data-type="blog">
+                <div class="splide-custom-nav">
+                    <div class="splide__arrows custom-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                    <div class="tabs__nav">
+                        <button class="blog-tabs__tab js-tabs__tab is-active" data-tab="news">
+                            Новини
+                        </button>
+
+                        <button class="blog-tabs__tab js-tabs__tab" data-tab="publications">
+                            Публікації
+                        </button>
+
+                        <button class="blog-tabs__tab js-tabs__tab" data-tab="video">
+                            Відео
+                        </button>
+                    </div>
+
+                    <div class="blog-tabs__content">
+
+                        <!-- Новини -->
+                        <div class="blog-tabs__slider js-tabs__panel is-active" data-slider="news">
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    {% set posts = [
+                                        {
+                                            image: "images/content/blog-card-img.png",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        },
+                                        {
+                                            image: "images/content/card-post-2.png",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        },
+                                        {
+                                            image: "images/content/card-post-3.jpg",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        },
+                                        {
+                                            image: "images/content/blog-card-img2.png",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        },
+                                        {
+                                            image: "images/content/blog-card-img.png",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        },
+                                        {
+                                            image: "images/content/blog-card-img2.png",
+                                            url: "single-post.html",
+                                            title: "Новинки Весна 2025 від Churchill",
+                                            date:"17.02.2025",
+                                            text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                                        }
+                                    ] %}
+                                    <ul class="blog-list splide__list">
+                                        {% for post in posts %}
+                                            <li class="card-post splide__slide">
+
+                                                <a href="{{ post.url }}" class="card-post__thumb">
+                                                    <img src="{{ post.image }}" alt="" class="card-post__img">
+                                                </a>
+
+                                                <div class="card-post__content">
+                                                    <div class="card-post__date">{{ post.date }}</div>
+                                                    <a href="{{ post.url }}">
+                                                        <h3 class="card-post__title">{{ post.title }}</h3>
+                                                    </a>
+
+                                                    <div class="card-post__text">{{ post.text }}</div>
+
+                                                    <a href="single-post.html" class="btn btn_primary">
+                                                        Детальніше
+                                                    </a>
+                                                </div>
+
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="page-blog.html" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                        </div>
+
+
+                        <!-- Бестселери -->
+                        <div class="blog-tabs__slider js-tabs__panel" data-slider="publications">
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    {% set products = [
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: "30",
+                                            discount_cost: "716"
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        },
+                                        {
+                                            image: "images/content/product-carts/product-1.png",
+                                            title: "Сет порцелянових банок для подачі закусок",
+                                            url: "product-single.html",
+                                            text: "Посуд для подачі та запікання",
+                                            brand: "Abert",
+                                            cost: "1023",
+                                            discount: null,
+                                            discount_cost: null
+
+                                        }
+                                    ] %}
+                                    <ul class="splide__list">
+                                        {% for product in products %}
+                                            <li class="card-product {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+
+                                                {# Бейдж знижки #}
+                                                {% if product.discount is defined and product.discount is not null %}
+                                                    <span class="card-product__badge">-{{ product.discount }}%</span>
+                                                {% endif %}
+
+                                                {# Зображення товару #}
+                                                <a href="{{ product.url }}" class="card-product__img-wrap">
+                                                    <img
+                                                            src="{{ product.image }}"
+                                                            alt="{{ product.title }}"
+                                                            class="card-product__img"
+                                                    >
+                                                </a>
+
+                                                {# Назва товару #}
+                                                <a href="{{ product.url }}">
+                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                </a>
+
+                                                {# Категорія / опис #}
+                                                <div class="card-product__sub-title">{{ product.text }}</div>
+
+                                                {# Ціна #}
+                                                <div class="card-product__price-block">
+                                                    {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                                        <span class="card-product__cost card-product__cost_old">
+                                                    {{ product.cost }} ₴
+                                                </span>
+
+                                                        <span class="card-product__cost card-product__cost_new">
+                                                    {{ product.discount_cost }} ₴
+                                                </span>
+                                                    {% else %}
+                                                        <span class="card-product__cost">
+                                                    {{ product.cost }} ₴
+                                                </span>
+                                                    {% endif %}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="page-sale.html" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                        </div>
+
+
+                        <!-- Sale -->
+                        <div class="blog-tabs__slider js-tabs__panel" data-slider="video">
+                            <div class="splide js-slider">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="card-product {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+
+                                            {# Бейдж знижки #}
+                                            {% if product.discount is defined and product.discount is not null %}
+                                                <span class="card-product__badge">-{{ product.discount }}%</span>
+                                            {% endif %}
+
+                                            {# Зображення товару #}
+                                            <a href="{{ product.url }}" class="card-product__img-wrap">
+                                                <img
+                                                        src="{{ product.image }}"
+                                                        alt="{{ product.title }}"
+                                                        class="card-product__img"
+                                                >
+                                            </a>
+
+                                            {# Назва товару #}
+                                            <a href="{{ product.url }}">
+                                                <h3 class="card-product__title">{{ product.title }}</h3>
+                                            </a>
+
+                                            {# Категорія / опис #}
+                                            <div class="card-product__sub-title">{{ product.text }}</div>
+
+                                            {# Ціна #}
+                                            <div class="card-product__price-block">
+                                                {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                                    <span class="card-product__cost card-product__cost_old">
+                                                    {{ product.cost }} ₴
+                                                </span>
+
+                                                    <span class="card-product__cost card-product__cost_new">
+                                                    {{ product.discount_cost }} ₴
+                                                </span>
+                                                {% else %}
+                                                    <span class="card-product__cost">
+                                                    {{ product.cost }} ₴
+                                                </span>
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slider-progress">
+                                <div class="slider-progress__bar js-slider-progress__bar"></div>
+                            </div>
+                            <a href="page-sale.html" class="btn btn_primary">
+                                Переглянути все
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

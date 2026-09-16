@@ -1,0 +1,270 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Тарілки плоскі — {{ siteName }}{% endblock %}
+
+{% block main_class %} single-product{% endblock %}
+
+{% block content %}
+    {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+
+    <div class="container">
+        {{ breadcrumbs ([
+            {title: "Столовий посуд",  url: "page-catalog.html"},
+            {title: "Тарілки",  url: "#"},
+            {title: "Тарілки плоскі"}
+        ]) }}
+    </div>
+    <div class="container">
+        <div class="product-container">
+            <div class="product-gallery">
+
+                <section id="main-slider" class="splide product-slider" aria-label="Головне зображення товару">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="images/content/product-xl.png" alt="Десертная тарелка Umi - вид 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041.png" alt="Десертная тарелка Umi - вид 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/product-xl.png" alt="Десертная тарелка Umi - вид 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041.png" alt="Десертная тарелка Umi - вид 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/product-xl.png" alt="Десертная тарелка Umi - вид 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041.png" alt="Десертная тарелка Umi - вид 2">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="thumbnail-slider" class="splide thumbs-slider" aria-label="Миниатюри товару">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="images/content/product-sm.png" alt="Миниатюра 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041-sm.png" alt="Миниатюра 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/product-sm.png" alt="Миниатюра 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041-sm.png" alt="Миниатюра 2">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/product-sm.png" alt="Миниатюра 1">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="images/content/6068041-sm.png" alt="Миниатюра 2">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Десертна тарілка 21×21 см Umi від F2D</h1>
+
+                <div class="price-row">
+                    <span class="price">1 935 ₴</span>
+                </div>
+
+                <p class="stock-status">Останні одиниці!</p>
+                <form class="product-action-form" method="POST">
+                    <div class="purchase-row">
+                        <div class="quantity-picker">
+                            <button type="button" class="qty-btn qty-btn_minus" aria-label="Зменшити"></button>
+                            <input type="number" name="quantity" class="qty-input" value="1" min="1" step="1">
+                            <button type="button" class="qty-btn qty-btn_plus" aria-label="Збільшити"></button>
+                        </div>
+                        <button type="submit" class="btn btn_secondary btn_orange btn-add-to-cart">Додати в кошик
+                        </button>
+                    </div>
+                </form>
+                <a href="#" class="btn btn_primary calc-link">До розрахунку</a>
+
+                <ul class="benefits-list">
+                    <li class="benefit-item"><strong>Безкоштовна</strong> доставка на суму від 3000 UAH протягом 1-2
+                        робочих днів
+                    </li>
+                    <li class="benefit-item"><strong>Безпечна</strong> та швидка оплата карткою на сайті</li>
+                    <li class="benefit-item">Можливий <strong>обмін/повернення</strong></li>
+                    <li class="benefit-item"><strong>Гарантія</strong> на товар</li>
+                    <li class="benefit-item">Персональна <strong>система бонусів</strong>, лояльності та знижок</li>
+                </ul>
+
+                <section class="product-description">
+                    <div class="product-description__inner">
+                        <div class="product-description__header">
+                            <h2 class="section__title section__title_sm">Опис</h2>
+                            <span class="arrow-icon"></span>
+                        </div>
+                        <div class="product-description__content">
+                            <p>Зустрічайте Umi – лінію посуду в японському стилі, яка перевершить усі ваші очікування.
+                                Виготовлена з високоякісної та міцної готельної порцеляни та вкрита автентичною
+                                реактивною глазур’ю, ця колекція ідеально підходить для подачі страв східної кухні. Umi
+                                характеризується поєднанням м’яких і міцних текстур та темно-зелених і синіх відтінків.
+                                Підніміть презентацію ваших суші або інших східних страв на вищий рівень з Umi!</p>
+                        </div>
+                    </div>
+                    <h3 class="specs-title">Характеристики товару:</h3>
+                    <ul class="specs-list">
+                        <li><span class="spec-label">Артикул:</span> <span class="spec-value">606804</span></li>
+                        <li><span class="spec-label">Бренд:</span> <span class="spec-value">Arbert</span></li>
+                        <li><span class="spec-label">Колекція:</span> <span class="spec-value">Umi</span></li>
+                        <li><span class="spec-label">Матеріал:</span> <span class="spec-value">Порцеляна</span></li>
+                        <li><span class="spec-label">Розмір:</span> <span class="spec-value">від 16-22 см</span></li>
+                    </ul>
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-similar">
+        <div class="container">
+            <div class="splide-custom-nav">
+                <div class="section-similar__heading">
+                    <h2 class="section__title section__title_sm">З цим товаром купують</h2>
+                    <div class="splide__arrows custom-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                </div>
+                <div class="splide similar-slider">
+                    <div class="splide__track">
+                        {% set products = [
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "single-product.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: "30",
+                                discount_cost: "716"
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            },
+                            {
+                                image: "images/content/product-carts/product-1.png",
+                                title: "Сет порцелянових банок для подачі закусок",
+                                url: "product-single.html",
+                                text: "Посуд для подачі та запікання",
+                                brand: "Abert",
+                                cost: "1023",
+                                discount: null,
+                                discount_cost: null
+
+                            }
+                        ] %}
+                        <ul class="splide__list">
+                            {% for product in products %}
+                                <li class="card-product splide__slide {% if product.discount_cost is defined and product.discount_cost is not null %}card-product_sale{% endif %}">
+                                    {% if product.discount is defined and product.discount is not null %}
+                                        <span class="card-product__badge">-{{ product.discount }}%</span>
+                                    {% endif %}
+                                    <a href="{{ product.url }}" class="card-product__img-wrap">
+                                        <img
+                                                src="{{ product.image }}"
+                                                alt="{{ product.title }}"
+                                                class="card-product__img"
+                                        >
+                                    </a>
+
+                                    <a href="{{ product.url }}">
+                                        <h3 class="card-product__title">{{ product.title }}</h3>
+                                    </a>
+
+                                    <p class="card-product__text">{{ product.text }}</p>
+
+                                    <p class="card-product__brand">
+                                        Бренд: <span>{{ product.brand }}</span>
+                                    </p>
+
+                                    <div class="card-product__price-block">
+                                        {% if product.discount_cost is defined and product.discount_cost is not null %}
+                                            <span class="card-product__cost card-product__cost_old">
+                {{ product.cost }} ₴
+            </span>
+
+                                            <span class="card-product__cost card-product__cost_new">
+                {{ product.discount_cost }} ₴
+            </span>
+                                        {% else %}
+                                            <span class="card-product__cost">
+                {{ product.cost }} ₴
+            </span>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

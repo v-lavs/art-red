@@ -1,0 +1,10 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.section-products-sale {
+  padding-bottom: 104px;
+
+  .btn-view-all {
+    margin-bottom: 60px;
+  }
+}

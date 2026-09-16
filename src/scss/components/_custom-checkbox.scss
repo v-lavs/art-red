@@ -1,0 +1,93 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  font-size: 14px;
+  color: #102941;
+}
+
+.custom-checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.custom-checkbox__box {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: #EDECE8;
+  transition: background-color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.custom-checkbox__input:checked ~ .custom-checkbox__box {
+  background-color: #78560C;
+}
+
+.custom-checkbox__box::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 1.75px 1.75px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.custom-checkbox__input:checked ~ .custom-checkbox__box::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* ======================================== Radio ======================================== */
+.custom-checkbox_radio .custom-checkbox__box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #78560C;
+  border-radius: 50%;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Прибираємо checkbox-галочку */
+.custom-checkbox_radio .custom-checkbox__box::after {
+  content: none;
+}
+
+/* Біле внутрішнє кільце */
+.custom-checkbox_radio
+.custom-checkbox__input:checked
+~ .custom-checkbox__box {
+  background-color: #FFFFFF;
+}
+
+/* Біла крапка/кільце всередині */
+.custom-checkbox_radio
+.custom-checkbox__input:checked
+~ .custom-checkbox__box::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  background-color:  #78560C;
+  transform: translate(-50%, -50%);
+}
+
+

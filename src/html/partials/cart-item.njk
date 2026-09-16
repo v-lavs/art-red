@@ -1,0 +1,21 @@
+{% macro cartItem(item) %}
+    <div class="cart-item">
+        <div class="cart-item__image">
+            <img src="{{ item.image | default('img/placeholder.jpg') }}" alt="{{ item.name }}" width="90" height="90">
+        </div>
+        <div class="cart-item__info">
+            <h4 class="cart-item__name">{{ item.name }}</h4>
+            <div class="cart-item__controls">
+                <div class="quantity-picker">
+                    <button type="button" class="quantity-picker__btn quantity-picker__btn--minus">−</button>
+                    <input type="number" class="quantity-picker__input" value="{{ item.quantity | default(1) }}" min="1" readonly>
+                    <button type="button" class="quantity-picker__btn quantity-picker__btn--plus">+</button>
+                </div>
+                <button type="button" class="cart-item__remove" aria-label="Видалити товар">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="cart-item__price">{{ item.price }} ₴</div>
+    </div>
+{% endmacro %}

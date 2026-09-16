@@ -1,0 +1,56 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 93px;
+  background-color: #FFFFFF;
+  padding: 23px 0;
+  cursor: pointer;
+}
+
+.accordion__header-title {
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.accordion-collapse {
+  overflow: hidden;
+  height: 0;
+}
+
+.toggle-collapse {
+  display: block;
+  width: 19px;
+  height: 10px;
+  background-image: url(../images/icons/acc-open.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.show .toggle-collapse {
+  transform: rotate(-180deg);
+}
+
+.accordion__item {
+  border-bottom: 1px solid rgba(120, 86, 12, 0.15);
+}
+
+.accordion-collapse__content {
+  font-size: 20px;
+  padding: 20px 0 40px;
+  line-height: 1.6;
+
+}
+
+.accordion__item,
+.toggle-collapse,
+.accordion-collapse,
+.accordion-collapse-content {
+  transition: 0.3s;
+}

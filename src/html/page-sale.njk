@@ -1,0 +1,174 @@
+`{% extends "layouts/base.njk" %}
+{% from "macros/catalog-sidebar.njk" import catalogSidebar %}
+
+{% block title %}SALE — {{ siteName }}{% endblock %}
+
+{% block main_class %}page page-products page-sale{% endblock %}
+
+{% block content %}
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="section__title section__title_xl">SALE</h1>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+        {{ breadcrumbs ([
+            {title: "Sale"}
+        ]) }}
+    </div>
+    <section class="section-products-sale">
+        <div class="container">
+            <h2 class="section__title section__title_sm">КАтегорії товарів на SALE</h2>
+            <a href="page-products.html" class="btn btn_primary btn-view-all">
+                Переглянути все
+            </a>
+            {% set categories = [
+                {
+                    title: "тарілки",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Тарілки плоскі", url: "#" },
+                    { title: "Тарілки глибокі", url: "#" },
+                    { title: "Соусники", url: "#" },
+                    { title: "Посуд для запікання та подачі", url: "#" },
+                    { title: "Дошки, камені та сланці", url: "#" },
+                    { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                    { title: "Підноси для подачі", url: "#" }
+                ]
+                },
+                {
+                    title: "Чайно-кавова група",
+                    img:"images/content/category-card/cat-2.png",
+                    url: "#",
+                    items: [
+                    { title: "Чашки чайні", url: "#" },
+                    { title: "Тарілки глибокі", url: "#" },
+                    { title: "Соусники", url: "#" },
+                    { title: "Посуд для запікання та подачі", url: "#" },
+                    { title: "Дошки, камені та сланці", url: "#" },
+                    { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                    { title: "Підноси для подачі", url: "#" }
+                ]
+                },
+                {
+                    title: "Столові прибори",
+                    img:"images/content/category-card/cat-3.png",
+                    url: "#",
+                    items: [
+                    { title: "Виделки", url: "#" },
+                    { title: "Тарілки глибокі", url: "#" },
+                    { title: "Соусники", url: "#" },
+                    { title: "Посуд для запікання та подачі", url: "#" },
+                    { title: "Дошки, камені та сланці", url: "#" },
+                    { title: "Відерка, кошики та лопатки для подачі", url: "#" },
+                    { title: "Підноси для подачі", url: "#" }
+                ]
+                },
+                {
+                    title: "Сервірування та фуршет",
+                    img:"images/content/category-card/cat-4.png",
+                    url: "#",
+                    items: [
+                    { title: "Серветниці", url: "#" },
+                    { title: "Спецівниці", url: "#" },
+                    { title: "Кошики, хлібниці та фруктівниці", url: "#" },
+                    { title: "Ємності для рідин", url: "#" },
+                    { title: "Цукернички та маслянички", url: "#" },
+                    { title: "Вази", url: "#" },
+                    { title: "Тортівниці та інше", url: "#" }
+                ]
+                },
+                {
+                    title: "Скляний барний посуд",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Келихи для вина", url: "#" },
+                    { title: "Келихи для шампанського", url: "#" },
+                    { title: "Бокали для пива", url: "#" },
+                    { title: "Стакани для напоїв та коктейлів", url: "#" },
+                    { title: "Рюмки та шоти", url: "#" },
+                    { title: "Графіни", url: "#" },
+                    { title: "Декантери", url: "#" }
+                ]
+                },
+                {
+                    title: "Освітлення",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Світильники", url: "#" },
+                    { title: "Підсвічники", url: "#" }
+                ]
+                },
+                {
+                    title: "Барний інвентар",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Келери та відерка", url: "#" },
+                    { title: "Додаткові аксесуари", url: "#" },
+                    { title: "Підноси барні", url: "#" }
+                ]
+                },
+                {
+                    title: "Кухонний посуд",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Профіесійні ножі", url: "#" },
+                    { title: "Каструлі", url: "#" },
+                    { title: "Сковорідки", url: "#" },
+                    { title: "Сотейники", url: "#" },
+                    { title: "Миски", url: "#" },
+                    { title: "Гатсроємності", url: "#" },
+                    { title: "Органзайзери для зберігання та інше", url: "#" }
+                ]
+                },
+                {
+                    title: "Текстиль",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+                    { title: "Плейсмати та ранери", url: "#" },
+                    { title: "Скатертини", url: "#" },
+                    { title: "Прихватки", url: "#" }
+                ]
+                },
+                {
+                    title: "Еко посуд",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+
+                ]
+                },
+                {
+                    title: "Обладнання",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+
+                ]
+                },
+                {
+                    title: "Молекулярна кухня",
+                    img:"images/content/category-card/cat-1.png",
+                    url: "#",
+                    items: [
+
+                ]
+                }
+            ] %}
+            <ul class="cat-products-list">
+                {% for category in categories %}
+                    {% include "partials/card-category.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

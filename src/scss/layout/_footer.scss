@@ -1,0 +1,87 @@
+@use "../base/mixins";
+@use "../base/variables";
+// Footer
+.footer {
+  color: #78560C;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  background-color: #ECE8D8;
+  padding: 86px 0;
+
+  .container {
+    display: flex;
+  }
+
+  &__logo {
+    max-width: 291px;
+    display: inline-block;
+    padding-right: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__part-left {
+    width: 30%;
+  }
+
+  &__menu {
+    li {
+      margin-bottom: 16px;
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  &__contacts {
+    a {
+      display: inline-block;
+      padding: 0;
+      color: inherit;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-grid {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .social-list {
+    display: flex;
+    gap: 8px;
+    padding-top: 24px;
+
+    li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      color: #191001;
+      transition: .35s;
+
+      &:hover,
+      &:focus {
+        color: #78560C;
+        transform: scale(1.15);
+
+      }
+
+      svg {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+form {
+  font-size: 14px;
+
+  textarea,
+  .label,
+  .input {
+    display: block;
+    width: 100%;
+  }
+
+
+  .label {
+    font-family: variables.$main-font;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    opacity: .5;
+    top: 0;
+    left: 8px;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    transition: .35s;
+  }
+  .input {
+    height: 36px;
+  }
+  textarea,
+  .input {
+    padding: 4px 8px;
+    border: none;
+    border-bottom: 1px solid rgba(120, 86, 12, 0.15)
+  }
+
+  .form__group {
+    position: relative;
+    padding-bottom: 24px;
+
+    &:focus-within label {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+::placeholder {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(120, 86, 12, 0.5);
+}
