@@ -1,0 +1,53 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.cart-drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  max-width: 578px;
+  width: 100%;
+  z-index: 600;
+  background-color: #ffffff;
+  padding: 48px 32px 38px;
+  max-height: 100vh;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: .35s;
+  &.is-visible{
+    transform: translateX(0);
+  }
+}
+.cart-drawer__header {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-drawer__body {
+  padding-bottom: 50px;
+}
+
+.cart-drawer__footer {
+  background-color: rgba(120, 86, 12, 0.15);
+  margin-left: -32px;
+  margin-right: -32px;
+  margin-bottom: -38px;
+  padding: 35px 32px 38px 32px;
+  .btn_stroke{
+    border: 1px solid #000000;
+    color: #000;
+  }
+  .btn{
+    width: 100%;
+    margin-bottom: 8px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .cart-summary__row--total{
+    padding-bottom: 24px;
+  }
+}
+
+.cart-drawer .section__title {
+  padding-bottom: 16px;
+}

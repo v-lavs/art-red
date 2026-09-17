@@ -2,10 +2,11 @@
 
 {% block title %}Оформлення замовлення — {{ siteName }}{% endblock %}
 
-{% block main_class %} checkout {% endblock %}
+{% block main_class %} main-checkout {% endblock %}
 
 {% block content %}
     {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
+    {% from "partials/cart-item.njk" import cartItem %}
 
     <div class="container">
         {{ breadcrumbs ([
@@ -16,9 +17,9 @@
     <div class="container d-flex">
 
         <section class="checkout__form">
+            <form class="checkout-form" action="" method="post">
             <h1 class="checkout__title section__title section__title_sm">ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h1>
 
-            <form class="checkout-form" action="" method="post">
 
                 <!-- 1. Особисті дані -->
                 <section class="checkout-section">
@@ -45,8 +46,6 @@
                         </div>
                     </div>
                 </section>
-
-
                 <!-- 2. Доставка -->
                 <section class="checkout-section">
 
@@ -111,8 +110,6 @@
                                   placeholder="Нотатки до вашого замовлення, наприклад, спеціальні примітки щодо доставки"></textarea>
                     </div>
                 </section>
-
-
                 <!-- 3. Оплата -->
                 <section class="checkout-section">
 
@@ -133,8 +130,6 @@
                     </div>
 
                 </section>
-
-
                 <!-- Правила -->
                 <label class="custom-checkbox checkout-terms">
                     <input type="checkbox" class="custom-checkbox__input" name="terms" required>
@@ -148,48 +143,56 @@
             </form>
         </section>
 
-
+        {% set cartProducts = [
+            {
+                image: "images/content/product-sm.png",
+                name: "Десертна тарілка 21×21 см Umi від F2D",
+                quantity: 2,
+                price: 1023
+            },
+            {
+                image: "images/content/product-sm.png",
+                name: "Сет порцелянових банок для подачі закусок",
+                quantity: 1,
+                price: 1023
+            }
+        ] %}
         <!-- Кошик -->
-        <aside class="checkout__cart">
+        <section class="cart-order">
 
-            <h2 class="cart__title section__title section__title_sm">КОШИК</h2>
+            <h2 class="section__title section__title_sm">Кошик</h2>
 
-            <div class="cart__items">
+            <div class="cart-order__body">
 
-                <article class="cart-item">
+                {% if cartProducts and cartProducts.length > 0 %}
 
-                    <img src="/images/product.jpg" alt="" class="cart-item__image">
+                    {% for product in cartProducts %}
+                        {{ cartItem(product) }}
+                    {% endfor %}
 
-                    <div class="cart-item__content">
+                {% else %}
 
-                        <h3 class="cart-item__title">ДЕСЕРТНА ТАРІЛКА 21×21 СМ</h3>
-
-                        <span class="cart-item__price">935 ₴</span>
-
-                        <div class="cart-item__quantity">
-                            <button type="button">−</button>
-                            <span>2</span>
-                            <button type="button">+</button>
-                        </div>
-
+                    <div class="cart-order__empty">
+                        <p>Ваш кошик порожній</p>
                     </div>
 
-                    <button type="button" class="cart-item__remove" aria-label="Видалити товар"> 🗑 </button>
-                </article>
+                {% endif %}
+
             </div>
 
-
-            <div class="cart__shipping">
-                <span>Доставка</span>
-                <span>по тарифам перевізника</span>
+            <div class="cart-order__footer">
+                <div class="cart-summary">
+                    <div class="cart-summary__row">
+                        <span class="cart-summary__label">Доставка</span>
+                        <span class="cart-summary__value">по тарифам перевізника</span>
+                    </div>
+                    <div class="cart-summary__row cart-summary__row--total">
+                        <span class="cart-summary__label">Загальна сума замовлення</span>
+                        <span class="cart-summary__value">2046 ₴</span>
+                    </div>
+                </div>
             </div>
-
-            <div class="cart__total">
-                <span>Загальна сума замовлення</span>
-                <strong>2805 ₴</strong>
-            </div>
-
-        </aside>
+        </section>
 
     </div>
 

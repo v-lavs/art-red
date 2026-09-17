@@ -316,7 +316,6 @@ export function init() {
         },
     };
 
-
     function initTabsSlider(root, options) {
         const tabs = root.querySelectorAll('.js-tabs__tab');
         const panels = root.querySelectorAll('.js-tabs__panel');
@@ -413,7 +412,6 @@ export function init() {
             activateTab(activeTab);
         }
     }
-
 
     function initProgressBarTabs(splide) {
         const panel = splide.root.closest('.js-tabs__panel');
@@ -585,8 +583,92 @@ export function init() {
     }
 
 //===========================================================================================================
-//
+//  SEARH
 //===========================================================================================================
+    const siteHeader = document.querySelector('.header');
+    function initSearch(headerElement) {
+        if (!headerElement) return;
+
+        const searchWrapper = headerElement.querySelector('.h-search');
+        const searchInput = headerElement.querySelector('.search__input');
+        const searchOverlay = headerElement.querySelector('.overlay');
+        const closeSearchBtn = headerElement.querySelector('.js-close-search');
+        const openSearchBtns = headerElement.querySelectorAll('.js-open-search');
+
+        if (!searchWrapper || !searchInput) return;
+
+        const openSearch = (e) => {
+            e.preventDefault();
+            searchWrapper.classList.add('is-open');
+            searchOverlay.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => searchInput.focus(), 300);
+        };
+
+        const closeSearch = () => {
+            searchWrapper.classList.remove('is-open');
+            searchOverlay.classList.remove('is-visible');
+            searchInput.value = ''; // Очищення інпуту, як ви просили
+            document.body.style.overflow = '';
+        };
+
+        openSearchBtns.forEach(btn => btn.addEventListener('click', openSearch));
+
+        if (closeSearchBtn) closeSearchBtn.addEventListener('click', closeSearch);
+        if (searchOverlay) searchOverlay.addEventListener('click', closeSearch);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchWrapper.classList.contains('is-open')) {
+                closeSearch();
+            }
+        });
+    }
+//===========================================================================================================
+//  CART
+//===========================================================================================================
+function initCartDriver(){
+    const cart = document.querySelector('#cart-drawer');
+    const cartOpen = document.querySelector('.header__cart');
+    const cartClose = document.querySelector('#cart-close');
+    const overlay = document.querySelector('.overlay');
+
+    function openCart() {
+        cart.classList.add('is-visible');
+        overlay.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+        cart.classList.remove('is-visible');
+        overlay.classList.remove('is-visible');
+        document.body.style.overflow = '';
+    }
+
+    cartOpen.addEventListener('click', openCart);
+    cartClose.addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+
+    document.querySelectorAll('.cart-drawer a[href]').forEach(link => {
+        link.addEventListener('click', (event) => {
+            const linkUrl = new URL(link.href, window.location.href);
+
+            const currentPage = window.location.pathname;
+            const targetPage = linkUrl.pathname;
+
+            if (currentPage === targetPage) {
+                event.preventDefault();
+                closeCart();
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeCart();
+        }
+    });
+}
+
 
 
     initPriceSlider();
@@ -601,6 +683,8 @@ export function init() {
     initProductSliders();
     initHiddenContent();
     initQuantityPickers();
+    initSearch(siteHeader);
+    initCartDriver();
 
     window.addEventListener('load', () => {
         initSliderBanner();

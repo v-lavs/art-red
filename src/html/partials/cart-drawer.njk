@@ -1,14 +1,29 @@
 {# Імпортуємо макрос картки товару #}
 {% from "partials/cart-item.njk" import cartItem %}
 
-<div class="cart-overlay" id="cart-overlay"></div>
+{# <div class="cart-overlay is-visible" id="cart-overlay"></div> #}
 
-<aside class="cart-drawer" id="cart-drawer">
+<div class="cart-drawer" id="cart-drawer">
     <div class="cart-drawer__header">
-        <h3>Кошик</h3>
-        <button type="button" class="cart-drawer__close" id="cart-close" aria-label="Закрити кошик">×</button>
+        <h3 class="section__title section__title_sm">Кошик</h3>
+        <button type="button" class="btn btn_close cart-drawer__close" id="cart-close" aria-label="Закрити кошик">
+            <img src="images/icons/close.svg" alt="">
+        </button>
     </div>
-
+    {% set cartProducts = [
+        {
+            image: "images/content/product-sm.png",
+            name: "Десертна тарілка 21×21 см Umi від F2D",
+            quantity: 2,
+            price: 1023
+        },
+        {
+            image: "images/content/product-sm.png",
+            name: "Сет порцелянових банок для подачі закусок",
+            quantity: 1,
+            price: 1023
+        }
+    ] %}
     <div class="cart-drawer__body">
         {# Якщо у нас є товари в масиві — перебираємо їх циклом #}
         {% if cartProducts and cartProducts.length > 0 %}
@@ -31,9 +46,10 @@
             </div>
             <div class="cart-summary__row cart-summary__row--total">
                 <span class="cart-summary__label">Загальна сума замовлення</span>
-                <span class="cart-summary__value">{{ cartTotal | default('0') }} ₴</span>
+                <span class="cart-summary__value">2046 ₴</span>
             </div>
         </div>
-        <a href="checkout.html" class="btn-checkout">Перейти до оформлення</a>
+        <a href="page-catalog.html" class="btn btn_secondary btn_stroke btn-checkout">Продовжити покупки</a>
+        <a href="checkout.html" class="btn btn_secondary  btn_gold btn-checkout">Перейти до оформлення</a>
     </div>
-</aside>
+</div>

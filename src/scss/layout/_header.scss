@@ -9,7 +9,7 @@
   top: 0;
   border-bottom: 1px solid #78560C;
   background-color: #FEFEFC;
-  z-index: 1000;
+  z-index: 500;
   &__nav {
     position: relative;
     padding: 22px 0;
@@ -73,8 +73,20 @@
   pointer-events: none;
   z-index: 1;
 }
-.h-search,
+.btn_close{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  padding: 1px;
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
 .btn_burger,
 .btn_close {
   display: none;
 }
+
