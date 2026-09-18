@@ -1,21 +1,14 @@
 @use "../../base/mixins";
 @use "../../base/variables";
 
-//.category-slider {
-//  .slider-progress {
-//    width: 100%;
-//    height: 1px;
-//    background: #e5e5e5;
-//    margin-top: 28px;
-//  }
-//
-//  .slider-progress__bar {
-//    width: 0;
-//    height: 100%;
-//    background: #8a6a32;
-//    transition: width 400ms ease;
-//  }
-//}
+.category-slider .slider-progress {
+  margin-bottom: 0;
+}
 
+@include mixins.respond-to(variables.$xs){
+  .category-slider .slider-progress {
+    margin-top: 16px;
+  }
+}
 
 

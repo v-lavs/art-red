@@ -50,3 +50,9 @@
 .page-description{
   padding-bottom: 100px;
 }
+
+@include mixins.respond-to(variables.$xl){
+  .products-grid{
+    gap: 10px;
+  }
+}

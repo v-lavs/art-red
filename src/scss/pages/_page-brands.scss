@@ -24,3 +24,9 @@
     max-height: 164px;
   }
 }
+
+@include mixins.respond-to(variables.$lg){
+  .brands__list{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

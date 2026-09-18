@@ -16,6 +16,7 @@
 
   display: flex;
   flex-direction: column;
+
   &:hover,
   &:focus {
     border-color: #78560C;
@@ -29,6 +30,7 @@
     justify-content: center;
     margin-bottom: 30px;
     height: 216px;
+
     img {
       width: 100%;
       height: 100%;
@@ -96,7 +98,8 @@
     color: #b90202;
     margin-left: 10px;
   }
-  &__price-block{
+
+  &__price-block {
     margin-top: auto;
   }
 }
@@ -111,6 +114,7 @@
   right: 32px;
   bottom: 32px;
   z-index: 3;
+
   img {
     display: inline-block;
     width: 100%;
@@ -126,6 +130,18 @@
   }
 }
 
-.card-product_sm{
+@include mixins.respond-to(variables.$xl) {
+  .page-catalog {
+    .card-product {
+      padding: 16px;
+    }
 
+    .btn_add_to_cart {
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+  .card-product__img-wrap {
+    height: 187px;
+  }
 }

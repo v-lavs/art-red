@@ -54,3 +54,35 @@
 .accordion-collapse-content {
   transition: 0.3s;
 }
+
+@include mixins.respond-to(variables.$md){
+  .accordion-collapse__content {
+    font-size: 18px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm){
+  .accordion__header-title {
+    font-size: 20px;
+  }
+  .accordion-collapse__content{
+    font-size: 16px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs){
+  .accordion__header-title {
+    font-size: 18px;
+  }
+  .accordion__header {
+    min-height: 70px;
+    padding: 16px 0;
+  }
+}
+
+@media screen and  (max-width: 490px){
+  .accordion__header-title {
+    font-size: 16px;
+  }
+}
+

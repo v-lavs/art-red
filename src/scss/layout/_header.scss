@@ -106,7 +106,17 @@
 .header__nav .btn_close {
   display: none!important;
 }
-
+@include mixins.respond-to(variables.$xl){
+  .header__logo{
+    max-width: 110px;
+  }
+  .header__nav{
+    padding: 0;
+  }
+  .header{
+    padding: 16px 0;
+  }
+}
 @media screen and (max-width: 1080px) {
   .header__nav {
     position: fixed;
@@ -147,5 +157,6 @@
   .header__search{
     margin-left: auto;
   }
+
 }
 

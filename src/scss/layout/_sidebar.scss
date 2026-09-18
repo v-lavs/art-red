@@ -87,3 +87,9 @@
 .catalog-filter .btn_close {
   display: none;
 }
+
+@include mixins.respond-to(variables.$xl){
+  .catalog__sidebar {
+    width: 280px;
+  }
+}

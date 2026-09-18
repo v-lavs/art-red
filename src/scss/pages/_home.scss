@@ -9,8 +9,6 @@
 .home {
   .about__tagline {
     color: #78560C;
-    font-family: variables.$secondary-font;
-    padding-right: 3%;
   }
 
   .company-values {
@@ -18,8 +16,13 @@
   }
 }
 
-.home .about {
+.about {
   padding-bottom: 100px;
+}
+
+.about__tagline {
+  font-family: variables.$secondary-font;
+  padding-right: 3%;
 }
 
 .home .company-values {
@@ -32,8 +35,6 @@
 
 .home {
   .section-brands {
-    padding-bottom: 138px;
-
     .slider-progress {
       margin-top: 30px;
     }
@@ -168,5 +169,77 @@
 
   .blog-list .splide__slide:nth-child(even) {
     width: 420px;
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+}
+
+.home {
+  .blog-list .splide__slide:nth-child(odd) {
+    width: 420px;
+  }
+
+  .blog-list .splide__slide:nth-child(even) {
+    width: 310px;
+  }
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .home {
+    .blog-list .splide__slide:nth-child(odd) {
+      width: 420px;
+    }
+
+    .blog-list .splide__slide:nth-child(even) {
+      width: 310px;
+    }
+  }
+  .block-letter {
+    margin-bottom: 136px;
+  }
+  .block-letter__part {
+    padding: 82px 46px;
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+  .block-letter__part {
+    padding: 32px;
+  }
+  .form-letter {
+    flex-wrap: wrap;
+    border: none;
+
+    .contact-submit {
+      margin-right: auto;
+    }
+
+    .label {
+      top: 0;
+    }
+
+    .input {
+      border-bottom: 1px solid rgba(120, 86, 12, 0.15);
+    }
+  }
+  .discount-info {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .block-letter {
+    display: block;
+  }
+  .block-letter__part {
+    width: 100%;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .home .section__title {
+    padding-bottom: 24px;
   }
 }

@@ -60,7 +60,11 @@ strong{
 strong {
   font-weight: 700;
 }
-
+@include mixins.respond-to(variables.$xl){
+  .section__title_xl {
+    font-size: 48px;
+  }
+}
 @include mixins.respond-to(variables.$lg) {
 
 }

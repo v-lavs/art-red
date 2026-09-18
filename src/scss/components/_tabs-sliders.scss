@@ -7,7 +7,8 @@
   .slider-progress {
     margin-bottom: 64px;
   }
-  .splide__arrows{
+
+  .splide__arrows {
     top: 4px;
   }
 }
@@ -47,6 +48,7 @@
   .card-product {
     padding: 12px 23px;
     text-align: center;
+    width: 234px;
 
     &__title {
       font-family: variables.$secondary-font;
@@ -78,5 +80,33 @@
     &__cost_new {
       font-size: 15px;
     }
+  }
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .tabs__nav {
+    padding-bottom: 44px;
+  }
+  .js-tabs__panel .slider-progress {
+    margin-bottom: 44px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .tabs__nav {
+    gap: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .splide__list .card-post__content {
+    padding-top: 24px;
+  }
+  .tabs__nav {
+    padding-bottom: 32px;
+  }
+  .js-tabs__panel .slider-progress {
+    margin-bottom: 25px;
   }
 }

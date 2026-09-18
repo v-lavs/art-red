@@ -1,11 +1,12 @@
 @use "../base/mixins";
 @use "../base/variables";
 
-.section-about{
+.section-about {
   font-size: 20px;
   line-height: 1.6;
   letter-spacing: 0;
-  &__title{
+
+  &__title {
     font-family: variables.$main-font;
     font-weight: 300;
     line-height: 58.71px;
@@ -14,37 +15,42 @@
   }
 }
 
-.about{
+.about {
   display: flex;
   padding-bottom: 62px;
-  &__tagline{
+
+  &__tagline {
     font-size: 45px;
     line-height: 1.3;
     letter-spacing: 0;
     width: 54.88%;
     flex-shrink: 0;
   }
-  &__text{
+
+  &__text {
     padding-left: 20px;
     line-height: 1.6;
   }
 }
 
-.company-values{
+.company-values {
   border-top: 1px solid #A8A8A7;
   padding-bottom: 100px;
-  &__row{
+
+  &__row {
     display: flex;
     align-items: center;
     padding: 46px 0;
     border-bottom: 1px solid #A8A8A7;
   }
-  &__title{
+
+  &__title {
     position: relative;
     width: 54.88%;
     flex-shrink: 0;
     padding-left: 24px;
-    &:before{
+
+    &:before {
       position: absolute;
       content: '';
       display: block;
@@ -58,23 +64,26 @@
     }
   }
 }
-.section-advantages{
+
+.section-advantages {
   background-color: #F7F4E9;
   padding: 74px 0;
 }
 
-.advantages{
+.advantages {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   color: #78560C;
-  &__item{
+
+  &__item {
     padding: 46px 36px;
     text-align: center;
     border: 1px solid rgba(120, 86, 12, 0.3);
     border-radius: 13px;
   }
-  &__title{
+
+  &__title {
     font-weight: 400;
     font-size: 24px;
     line-height: 1.44;
@@ -85,19 +94,23 @@
 
 .section-why-choose {
   padding: 134px 0;
+
   .title_md {
     font-weight: 300;
     letter-spacing: 0;
     margin-bottom: 48px;
   }
+
   ul {
     font-size: 24px;
     line-height: 1.875;
+
     li {
       border-bottom: 1px solid rgba(120, 86, 12, 0.3);
       position: relative;
       min-height: 70px;
       padding: 12px 12px 12px 30px;
+
       &:before {
         content: ' ';
         display: block;
@@ -111,5 +124,72 @@
 
       }
     }
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+  .about__tagline {
+    font-size: 40px;
+  }
+  .section-why-choose .title_md {
+    font-size: 40px;
+  }
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .company-values__row {
+    padding: 40px 0;
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+  .about__tagline {
+    font-size: 35px;
+  }
+  .section-about {
+    font-size: 18px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .about {
+    display: block;
+  }
+   .about {
+    &__tagline {
+      padding: 0;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+  }
+  .about__text {
+    width: 100%;
+    padding: 0;
+  }
+  .company-values__row {
+    padding: 26px 0;
+  }
+  .section-about {
+    font-size: 16px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+  .about__tagline {
+    font-size: 30px;
+  }
+  .company-values__row {
+    display: block;
+    padding-top: 0;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .company-values__title {
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 }

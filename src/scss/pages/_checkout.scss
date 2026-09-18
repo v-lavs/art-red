@@ -1,9 +1,10 @@
 @use "../base/mixins";
 @use "../base/variables";
 
-.main-checkout{
+.main-checkout {
   padding-bottom: 134px;
-  .d-flex{
+
+  .d-flex {
     justify-content: space-between;
     gap: 36px;
   }
@@ -82,7 +83,9 @@
       margin-right: 16px;
     }
   }
-
+  .custom-checkbox__label{
+    color: #78560C;
+  }
 }
 
 .delivery-methods {
@@ -140,10 +143,16 @@
   width: 100%;
 }
 
-.cart-order{
+.cart-order {
   width: 506px;
 }
 
 .cart-order__body {
   padding-bottom: 50px;
+}
+
+.checkout-terms{
+  .custom-checkbox__label{
+    color: #78560C;
+  }
 }

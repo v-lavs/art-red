@@ -71,3 +71,10 @@
     padding-top: 38px;
   }
 }
+
+@include mixins.respond-to(variables.$xl){
+  .category-card__title{
+    font-size: 20px;
+  }
+
+}

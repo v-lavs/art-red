@@ -100,3 +100,9 @@
   margin-bottom: 8px;
   line-height: 1.43;
 }
+
+@include mixins.respond-to(variables.$xl){
+  .section-contacts__thumb img {
+    object-fit: contain;
+  }
+}

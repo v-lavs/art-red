@@ -1,7 +1,7 @@
 @use "../base/mixins";
 @use "../base/variables";
 
-.splide__arrows{
+.splide__arrows {
   position: absolute;
   top: -3px;
   right: 0;
@@ -11,7 +11,8 @@
 .splide__arrow--next {
   right: 0;
 }
-.splide__arrow--prev{
+
+.splide__arrow--prev {
   left: -0;
 }
 
@@ -31,9 +32,10 @@
 
 }
 
-.splide-custom-nav{
+.splide-custom-nav {
   position: relative;
-  .splide{
+
+  .splide {
     position: static;
   }
 }
@@ -49,4 +51,26 @@
   height: 3px;
   transition: width 400ms ease;
   width: 0;
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .slider-progress {
+    margin: 40px 0 44px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .splide__arrows {
+    display: none;
+  }
+  .block-letter__part_left {
+    padding: 63px 32px 38px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+  .slider-progress {
+    margin: 16px 0 25px;
+  }
 }

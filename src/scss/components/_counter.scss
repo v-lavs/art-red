@@ -6,7 +6,8 @@
   padding: 30px 38px;
   margin-bottom: 138px;
 }
-.values-list{
+
+.values-list {
   display: flex;
   gap: 30px;
   justify-content: space-between;
@@ -14,19 +15,80 @@
   border: 1px solid #FEFEFC;
 }
 
-.counter__item{
+.counter__item {
   max-width: 267px;
   width: 30%;
   font-size: 18px;
-  letter-spacing:0;
+  letter-spacing: 0;
   min-height: 128px;
   line-height: 28px;
 }
-.counter__number{
+
+.counter__number {
   font-family: variables.$secondary-font;
   font-size: 77px;
   letter-spacing: 0;
   color: #78560C;
   line-height: 45px;
   padding-bottom: 24px;
+}
+
+@include mixins.respond-to(variables.$xl) {
+  .counter__number {
+    font-size: 67px;
+  }
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .counter-wrap {
+    margin-bottom: 110px;
+  }
+  .counter__item {
+    width: 27%;
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+  .values-list {
+    padding: 24px;
+  }
+  .counter-wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .counter__number {
+    font-size: 56px;
+  }
+  .counter__item {
+    font-size: 16px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .values-list {
+    flex-direction: column;
+    br{
+      display: none;
+    }
+  }
+  .counter-wrap {
+    max-width: 420px;
+    width: 100%;
+  }
+  .counter__item {
+    width: 100%;
+    min-height: 0;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .counter-wrap {
+    margin-bottom: 80px;
+  }
+}
+@media screen and  (max-width: 490px){
+  .counter__number {
+    font-size: 50px;
+    padding-bottom: 16px;
+  }
 }
