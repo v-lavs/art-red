@@ -33,6 +33,39 @@ export function init() {
             move(activeLink);
         }
     });
+
+//==============================================================================
+//  MOB MENU
+//  ============================================================================
+    function initMobMenu() {
+        const burger = document.querySelector('.btn_burger');
+        const nav = document.querySelector('.header__nav');
+        const closeNav = document.querySelector('.header__nav .btn_close');
+        const overlay = document.querySelector('.overlay');
+
+        function openMenu() {
+            nav.classList.add('is_open');
+            overlay.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            nav.classList.remove('is_open');
+            overlay.classList.remove('is-visible');
+            document.body.style.overflow = '';
+        }
+
+        burger.addEventListener('click', openMenu);
+        closeNav.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Закриваємо меню при кліку на лінк
+        const navLinks = nav.querySelectorAll('a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
 //==============================================================================
 //  RANGE SLIDER
 //  ============================================================================
@@ -670,7 +703,7 @@ function initCartDriver(){
 }
 
 
-
+    initMobMenu();
     initPriceSlider();
     initSidebarCollapse();
     initCustomSelect();

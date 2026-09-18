@@ -22,16 +22,32 @@
     }
   }
 }
+@include mixins.respond-to(variables.$xl){
+  .menu__item {
+    font-size: 16px;
+    a {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+@media screen and (max-width: 1080px){
 
-@include mixins.respond-to(variables.$md){
   .header__nav .menu{
     display: block;
     height: 100%;
     max-height: 90vh;
     overflow-y: auto;
+
   }
   .header__nav .menu__item{
-    color: #000;
     font-size: 22px;
+    margin-bottom: 5px;
+   a{
+     padding: 10px 0;
+   }
+  }
+  .underline{
+    display: none;
   }
 }
