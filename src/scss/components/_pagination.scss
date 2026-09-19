@@ -6,33 +6,53 @@
     display: flex;
     gap: 4px;
   }
-  &__item{
+
+  &__item {
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
     letter-spacing: 1.13px;
     color: #78560C;
   }
+
   &__dots,
-  &__link{
+  &__link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50px;
     height: 43px;
   }
-  &__dots{
+
+  &__dots {
     background-color: #ECE8D8;
   }
-  &__link{
+
+  &__link {
     border: 1px solid #ECE8D8;
-    &.is-active{
+
+    &.is-active {
       border-color: #545454;
     }
   }
 }
-.wrap-pagination{
+
+.wrap-pagination {
   display: flex;
   justify-content: center;
   padding-top: 60px;
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .pagination__dots, .pagination__link {
+    width: 40px;
+    height: 38px;
+  }
+  .wrap-pagination {
+    padding-top: 32px;
+  }
+  .page-description,
+  .catalog__products {
+    padding-bottom: 60px;
+  }
 }

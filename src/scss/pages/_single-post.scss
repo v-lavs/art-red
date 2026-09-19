@@ -111,3 +111,9 @@
   }
 }
 
+@include mixins.respond-to(variables.$xs){
+  .post__footer{
+    padding: 24px 0 60px;
+  }
+}
+

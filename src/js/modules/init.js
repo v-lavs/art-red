@@ -66,6 +66,7 @@ export function init() {
             link.addEventListener('click', closeMenu);
         });
     }
+
 //==============================================================================
 //  RANGE SLIDER
 //  ============================================================================
@@ -207,10 +208,13 @@ export function init() {
         const sliderBanner = new Splide('.banner-slider', {
             type: 'loop',
             perPage: 1,
+            perMove: 1,
             pagination: false,
             autoplay: true,
             arrows: false,
-            speed: 1200,
+            speed: 800,
+            drag: 'free',
+            snap: true,
         });
         sliderBanner.mount();
     }
@@ -528,6 +532,18 @@ export function init() {
             pagination: false,
             arrowPath: 'M33 6.36377C33.5523 6.36377 34 6.81148 34 7.36377C34 7.91605 33.5523 8.36377 33 8.36377V7.36377V6.36377ZM0.292892 8.07088C-0.0976295 7.68035 -0.0976295 7.04719 0.292892 6.65666L6.65685 0.292702C7.04738 -0.0978227 7.68054 -0.0978227 8.07107 0.292702C8.46159 0.683226 8.46159 1.31639 8.07107 1.70692L2.41421 7.36377L8.07107 13.0206C8.46159 13.4111 8.46159 14.0443 8.07107 14.4348C7.68054 14.8254 7.04738 14.8254 6.65685 14.4348L0.292892 8.07088ZM33 7.36377V8.36377H1V7.36377V6.36377H33V7.36377Z',
             speed: 1200,
+            breakpoints: {
+                991: {
+                    perPage: 3,
+                },
+                767: {
+                    perPage: 2,
+                    gap: 7,
+                },
+                510: {
+                    perPage: 1,
+                },
+            }
         });
         similarSlider.mount();
     }
@@ -614,11 +630,29 @@ export function init() {
         if (!minusBtn || !plusBtn || !input) {
             return;
         }
-        const getValue = () => parseInt(input.value, 10) || 1;
-        const getStep = () => parseInt(input.getAttribute('step'), 10) || 1;
-        const getMin = () => parseInt(input.getAttribute('min'), 10) || 1;
-        const getMax = () => parseInt(input.getAttribute('max'), 10);
+        const getValue = () => {
+            const value = parseInt(input.value, 10);
+            return Number.isNaN(value) ? 0 : value;
+        };
+        const getStep = () => {
+            const step = parseInt(input.getAttribute('step'), 10);
+            return Number.isNaN(step) || step <= 0 ? 1 : step;
+        };
+        const getMin = () => {
+            const min = parseInt(input.getAttribute('min'), 10);
+            return Number.isNaN(min) ? 0 : min;
+        };
+        const getMax = () => {
+            const max = parseInt(input.getAttribute('max'), 10);
+            return Number.isNaN(max) ? null : max;
+        };
         const updateValue = value => {
+            const min = getMin();
+            const max = getMax();
+            value = Math.max(value, min);
+            if (max !== null) {
+                value = Math.min(value, max);
+            }
             input.value = value;
             input.dispatchEvent(new Event('change', {bubbles: true}));
         };
@@ -634,7 +668,7 @@ export function init() {
             const value = getValue();
             const step = getStep();
             const max = getMax();
-            if (!max || value < max) {
+            if (max === null || value < max) {
                 updateValue(value + step);
             }
         });
@@ -645,6 +679,7 @@ export function init() {
 //  SEARH
 //===========================================================================================================
     const siteHeader = document.querySelector('.header');
+
     function initSearch(headerElement) {
         if (!headerElement) return;
 
@@ -682,52 +717,90 @@ export function init() {
             }
         });
     }
+
 //===========================================================================================================
 //  CART
 //===========================================================================================================
-function initCartDriver(){
-    const cart = document.querySelector('#cart-drawer');
-    const cartOpen = document.querySelector('.header__cart');
-    const cartClose = document.querySelector('#cart-close');
-    const overlay = document.querySelector('.overlay');
+    function initCartDriver() {
+        const cart = document.querySelector('#cart-drawer');
+        const cartOpen = document.querySelector('.header__cart');
+        const cartClose = document.querySelector('#cart-close');
+        const overlay = document.querySelector('.overlay');
 
-    function openCart() {
-        cart.classList.add('is-visible');
-        overlay.classList.add('is-visible');
-        document.body.style.overflow = 'hidden';
-    }
+        function openCart() {
+            cart.classList.add('is-visible');
+            overlay.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+        }
 
-    function closeCart() {
-        cart.classList.remove('is-visible');
-        overlay.classList.remove('is-visible');
-        document.body.style.overflow = '';
-    }
+        function closeCart() {
+            cart.classList.remove('is-visible');
+            overlay.classList.remove('is-visible');
+            document.body.style.overflow = '';
+        }
 
-    cartOpen.addEventListener('click', openCart);
-    cartClose.addEventListener('click', closeCart);
-    overlay.addEventListener('click', closeCart);
+        cartOpen.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        overlay.addEventListener('click', closeCart);
 
-    document.querySelectorAll('.cart-drawer a[href]').forEach(link => {
-        link.addEventListener('click', (event) => {
-            const linkUrl = new URL(link.href, window.location.href);
+        document.querySelectorAll('.cart-drawer a[href]').forEach(link => {
+            link.addEventListener('click', (event) => {
+                const linkUrl = new URL(link.href, window.location.href);
 
-            const currentPage = window.location.pathname;
-            const targetPage = linkUrl.pathname;
+                const currentPage = window.location.pathname;
+                const targetPage = linkUrl.pathname;
 
-            if (currentPage === targetPage) {
-                event.preventDefault();
+                if (currentPage === targetPage) {
+                    event.preventDefault();
+                    closeCart();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
                 closeCart();
             }
         });
-    });
+    }
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeCart();
+    //=====================================================================
+    // OPEN SIDEBAR
+    //=====================================================================
+    function initSidebar() {
+        const bntOpenSb = document.querySelector('.btn_open-sidebar');
+        const sidebar = document.querySelector('.catalog__sidebar');
+        const btnCloseSb = document.querySelector('.catalog__sidebar .btn_close');
+        const backdrop = document.querySelector('.sidebar_overlay');
+
+        if (!sidebar || !backdrop) return;
+
+        if (bntOpenSb) {
+            bntOpenSb.addEventListener('click', (e) => {
+                e.preventDefault();
+                sidebar.classList.add('is_open');
+                backdrop.classList.add('is-visible');
+                document.body.style.overflow = 'hidden';
+            });
         }
-    });
-}
 
+        function closeSidebar(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            sidebar.classList.remove('is_open');
+            backdrop.classList.remove('is-visible');
+            document.body.style.overflow = ' ';
+        }
+
+        if (btnCloseSb) {
+            btnCloseSb.addEventListener('click', closeSidebar);
+        }
+        if (backdrop) {
+            backdrop.addEventListener('click', closeSidebar);
+        }
+    }
 
     initMobMenu();
     initPriceSlider();
@@ -744,6 +817,8 @@ function initCartDriver(){
     initQuantityPickers();
     initSearch(siteHeader);
     initCartDriver();
+    initSidebar();
+
 
     window.addEventListener('load', () => {
         initSliderBanner();

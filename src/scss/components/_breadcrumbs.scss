@@ -38,9 +38,19 @@
     &:last-child{
       padding-right: 0;
       margin-right: 0;
+      white-space: nowrap;
       &:after{
         display: none;
       }
     }
+  }
+}
+
+@include mixins.respond-to(variables.$xs){
+  .breadcrumbs__item:last-child{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
   }
 }

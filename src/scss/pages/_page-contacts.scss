@@ -106,3 +106,16 @@
     object-fit: contain;
   }
 }
+
+@include mixins.respond-to(variables.$sm){
+  .section-contacts__row {
+    flex-direction: column;
+    padding-top: 32px;
+  }
+  .section-contacts__col{
+    width: 100%;
+  }
+  .map-container {
+    margin-top: 32px;
+  }
+}

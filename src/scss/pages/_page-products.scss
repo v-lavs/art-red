@@ -1,14 +1,35 @@
 @use "../base/mixins";
 @use "../base/variables";
 
-.page-products{
+.page-products {
 
 }
-.section-products{
+
+.section-products {
   padding-bottom: 104px;
 }
-.cat-products-list{
+
+.cat-products-list {
   display: grid;
   gap: 48px 20px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@include mixins.respond-to(variables.$md) {
+  .cat-products-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .cat-products-list {
+    display: block;
+  }
+  .category-card {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

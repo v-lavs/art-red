@@ -1,6 +1,10 @@
 @use "../base/mixins";
 @use "../base/variables";
 
+
+.splide__track {
+  touch-action: pan-y pinch-zoom !important;
+}
 .splide__arrows {
   position: absolute;
   top: -3px;

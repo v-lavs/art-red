@@ -106,7 +106,9 @@
   object-fit: cover;
   z-index: 1; /* Видео уходит на задний план */
 }
-
+.banner-slider .splide__track {
+  touch-action: pan-y!important;
+}
 .banner-slide__content {
   position: relative;
   z-index: 2;
@@ -144,6 +146,7 @@
   }
   .section-banner {
     margin-bottom: 40px;
+    height: 90vh;
     .btn {
       font-size: 16px;
       padding: 13px;

@@ -29,7 +29,6 @@
 
   &__text {
     padding-left: 20px;
-    line-height: 1.6;
   }
 }
 
@@ -140,6 +139,9 @@
   .company-values__row {
     padding: 40px 0;
   }
+  .section-why-choose {
+    padding: 110px 0;
+  }
 }
 
 @include mixins.respond-to(variables.$md) {
@@ -149,13 +151,19 @@
   .section-about {
     font-size: 18px;
   }
+  .advantages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .section-why-choose .title_md {
+    font-size: 35px;
+  }
 }
 
 @include mixins.respond-to(variables.$sm) {
   .about {
     display: block;
   }
-   .about {
+  .about {
     &__tagline {
       padding: 0;
       margin-bottom: 32px;
@@ -172,10 +180,15 @@
   .section-about {
     font-size: 16px;
   }
+  .section-why-choose ul  {
+    font-size: 22px;
+  }
 }
 
 @include mixins.respond-to(variables.$xs) {
-
+  .about {
+    padding-bottom: 60px;
+  }
   .about__tagline {
     font-size: 30px;
   }
@@ -188,8 +201,36 @@
       margin-bottom: 0;
     }
   }
-  .company-values__title {
-    font-size: 20px;
-    margin-bottom: 16px;
+  .company-values {
+    border: none;
+    padding-bottom: 60px;
+    &__title {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+  }
+  .advantages {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .section-advantages {
+    padding: 60px 0;
+  }
+  .section-why-choose {
+    padding: 60px 0;
+  }
+  .section-about {
+    line-height: 2;
+  }
+  .section-why-choose {
+    padding: 60px 0;
+
+    ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+     .title_md {
+      font-size: 30px;
+       margin-bottom: 24px;
+    }
   }
 }

@@ -137,7 +137,9 @@
     text-decoration: none;
   }
 }
-
+.custom-checkbox.checkout-terms{
+  align-items: flex-start;
+}
 .checkout-submit {
   margin-top: 24px;
   width: 100%;

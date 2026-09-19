@@ -2,7 +2,7 @@
 @use "../base/variables";
 
 .section-brands{
-  padding-bottom: 104px;
+  padding-bottom: 100px;
 }
 .brands__list {
   display: grid;
@@ -28,5 +28,17 @@
 @include mixins.respond-to(variables.$lg){
   .brands__list{
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@include mixins.respond-to(variables.$md){
+  .brands__list{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+@include mixins.respond-to(variables.$xs){
+  .brands__list{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

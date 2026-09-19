@@ -218,21 +218,42 @@ body.menu-open {
 }
 
 @include mixins.respond-to(variables.$lg) {
-.section{
-  padding-bottom: 110px;
-}
+  .section {
+    padding-bottom: 110px;
+  }
 }
 
 @include mixins.respond-to(variables.$md) {
-
+  .breadcrumbs {
+    padding: 24px 0 32px;
+  }
+  .section__title_xl {
+    font-size: 40px;
+  }
 }
 
 @include mixins.respond-to(variables.$sm) {
-
+  .page-banner .container {
+    display: block;
+  }
+  .page-banner__thumb {
+    padding-left: 0;
+    padding-top: 60px;
+    width: 100%;
+  }
 }
 
 @include mixins.respond-to(variables.$xs) {
-  .section{
-    padding-bottom: 70px;
+  body{
+    line-height: 2;
+  }
+  .dynamic-content h2{
+    font-size: 28px;
+  }
+  .section {
+    padding-bottom: 60px;
+  }
+  .section__title_xl {
+    font-size: 32px;
   }
 }

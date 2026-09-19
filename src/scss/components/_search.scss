@@ -37,9 +37,10 @@
     right: 70px;
     top: -60px;
   }
-  .container{
+
+  .container {
     position: relative;
-}
+  }
 
 }
 
@@ -88,6 +89,7 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 100%;
 }
 
+.sidebar_overlay,
 .overlay {
   position: fixed;
   top: 0;
@@ -105,5 +107,21 @@ input[type="search"]::-webkit-search-cancel-button {
     z-index: 160;
     pointer-events: auto;
     opacity: 1;
+  }
+}
+
+.sidebar_overlay.is-visible {
+  z-index: 560;
+}
+
+@include mixins.respond-to(variables.$md) {
+  .h-search .btn_close {
+    right: 46px;
+  }
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .h-search .btn_close {
+    right: 26px;
   }
 }

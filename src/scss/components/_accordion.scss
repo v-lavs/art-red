@@ -78,6 +78,9 @@
     min-height: 70px;
     padding: 16px 0;
   }
+  .accordion-collapse__content{
+    line-height: 2;
+  }
 }
 
 @media screen and  (max-width: 490px){

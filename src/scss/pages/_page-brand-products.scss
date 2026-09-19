@@ -33,3 +33,30 @@
     padding-bottom: 58px;
   }
 }
+
+@include mixins.respond-to(variables.$lg){
+  .section-intro .section__header {
+    padding-bottom: 100px;
+  }
+  .section-intro .part-right {
+    width: 30%;
+    text-align: right;
+  }
+}
+@include mixins.respond-to(variables.$sm){
+  .section-intro .section__header {
+    display: block;
+  }
+  .section-intro .part-left,
+  .section-intro .part-right{
+    width: 100%;
+  }
+  .section-intro .part-left{
+    margin-bottom: 32px;
+  }
+}
+@include mixins.respond-to(variables.$xs){
+  .section-intro .section__header {
+    padding-bottom: 60px;
+  }
+}
