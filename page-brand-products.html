@@ -125,10 +125,13 @@
             <div class="catalog__inner">
 
                 
-    <button type="button" class="btn_open-sidebar"></button>
+    <button type="button" class="btn btn_open-sidebar" aria-label="Відкрити сайтбар">
+        <img src="images/icons/filter.svg" alt="">
+    </button>
+    <div class="sidebar_overlay"></div>
     <aside class="catalog__sidebar">
-        <button class="btn_close">
-            <img src="images/icons/btn-close.svg" alt="Закрити сайтбар з фільтрами">
+        <button type="button" class="btn btn_close" aria-label="Закрити сайтбар з фільтрами">
+            <img src="images/icons/close.svg" alt="">
         </button>
         <form action="/catalog" method="GET" class="catalog-filters">
 
