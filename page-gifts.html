@@ -114,6 +114,18 @@
             <img src="images/icons/close.svg" alt="">
         </button>
         <form action="/catalog" method="GET" class="catalog-filters">
+            <div class="filter__active-tags">
+                <h3 class="catalog-filter__heading">Бренд</h3>
+                <div class="filter__tag">
+                    <span class="filter__tag-text">Churchill</span>
+                    <a href="#" class="btn_reset-tag" aria-label="Видалити фільтр">
+                        <img src="images/icons/close.svg" alt="" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+            <div class="wrap-reset">
+                <button type="reset" class="btn btn_primary">Очистити фільтри</button>
+            </div>
 
             <fieldset class="catalog-filter">
                 <div class="price-filter">
@@ -420,11 +432,9 @@
                     </div>
                 </fieldset>
 
-            <button type="submit" class="btn btn_primary btn_submit">
+            <button type="submit" class="btn btn_secondary btn_gold btn_submit">
                 Застосувати фільтри
             </button>
-
-            <button type="reset" class="btn btn_secondary btn_gold">Очистити фільтри</button>
 
         </form>
     </aside>
