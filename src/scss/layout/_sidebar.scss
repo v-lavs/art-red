@@ -6,15 +6,47 @@
   padding-right: 16px;
   padding-bottom: 60px;
   flex-shrink: 0;
-  &.is_open{
+
+  &.is_open {
     transform: translateX(0);
   }
+
   legend {
     width: 100%;
   }
-  .btn_primary{
-    margin-bottom: 32px;
+}
+
+.filter__active-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  .catalog-filter__heading {
+    margin-bottom: 16px;
   }
+}
+
+.wrap-reset {
+  padding: 24px 0 60px;
+}
+
+.filter__tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #102941;
+  border: 1px solid #000000;
+  padding: 8px;
+  gap: 8px;
+}
+
+.btn_reset-tag {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  width: 15px;
+  height: 15px;
 }
 
 .price-filter {
@@ -88,8 +120,9 @@
 
 .btn_open-sidebar,
 .catalog__sidebar .btn_close {
-  display: none!important;
+  display: none !important;
 }
+
 .btn.btn_open-sidebar {
   width: 30px;
   height: 30px;
@@ -99,16 +132,18 @@
   top: -6px;
   border: 1px solid #78560C;
 }
-.catalog__inner{
+
+.catalog__inner {
   position: relative;
 }
-@include mixins.respond-to(variables.$xl){
+
+@include mixins.respond-to(variables.$xl) {
   .catalog__sidebar {
     width: 280px;
   }
 }
 
-@include mixins.respond-to(variables.$md){
+@include mixins.respond-to(variables.$md) {
   .catalog__sidebar {
     width: 326px;
     position: fixed;
@@ -125,9 +160,9 @@
   }
   .btn_open-sidebar,
   .catalog__sidebar .btn_close {
-    display: block!important;
+    display: block !important;
   }
-  .catalog__sidebar .btn_close{
+  .catalog__sidebar .btn_close {
     position: absolute;
     top: 30px;
     right: 30px;

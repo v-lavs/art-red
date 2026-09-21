@@ -26,10 +26,13 @@
     display: block;
   }
   .category-card {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  .category-card__footer{
+    padding-top: 32px;
   }
 }

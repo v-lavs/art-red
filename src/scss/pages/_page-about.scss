@@ -10,7 +10,7 @@
     font-family: variables.$main-font;
     font-weight: 300;
     line-height: 58.71px;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     color: #000;
   }
 }
@@ -29,6 +29,8 @@
 
   &__text {
     padding-left: 20px;
+    font-size: 20px;
+    line-height: 1.6;
   }
 }
 
@@ -40,7 +42,7 @@
     display: flex;
     align-items: center;
     padding: 46px 0;
-    border-bottom: 1px solid #A8A8A7;
+    border-bottom: 1px solid rgb(168, 168, 167, .4);
   }
 
   &__title {
@@ -55,7 +57,7 @@
       display: block;
       width: 10px;
       height: 10px;
-      background-color: #000000;
+      background-color: #78560C;
       border-radius: 3px;
       left: 0;
       top: 50%;
@@ -105,15 +107,15 @@
     line-height: 1.875;
 
     li {
-      border-bottom: 1px solid rgba(120, 86, 12, 0.3);
+      border-bottom: 1px solid rgba(168, 168, 167, 0.4);
       position: relative;
-      min-height: 70px;
+      margin-bottom: 16px;
       padding: 12px 12px 12px 30px;
 
       &:before {
         content: ' ';
         display: block;
-        background-color: #000000;
+        background-color: #78560C;
         position: absolute;
         width: 10px;
         height: 10px;
@@ -188,6 +190,10 @@
 @include mixins.respond-to(variables.$xs) {
   .about {
     padding-bottom: 60px;
+    &__text{
+      font-size: 16px;
+      line-height: 2;
+    }
   }
   .about__tagline {
     font-size: 30px;
@@ -205,12 +211,15 @@
     border: none;
     padding-bottom: 60px;
     &__title {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 16px;
     }
   }
   .advantages {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    &__item{
+      line-height: 1.6;
+    }
   }
   .section-advantages {
     padding: 60px 0;
@@ -232,5 +241,8 @@
       font-size: 30px;
        margin-bottom: 24px;
     }
+  }
+  .section-why-choose ul li:before {
+    top: 20px;
   }
 }

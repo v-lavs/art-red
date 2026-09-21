@@ -158,3 +158,33 @@
     color: #78560C;
   }
 }
+
+@include mixins.respond-to(variables.$xl){
+  .main-checkout .d-flex {
+    gap: 16px;
+  }
+}
+@include mixins.respond-to(variables.$md){
+  .cart-order {
+    width: 100%;
+    order: -1;
+    padding-bottom: 42px;
+  }
+  .checkout__form{
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .main-checkout {
+    padding-bottom: 60px;
+    .d-flex {
+      flex-wrap: wrap;
+    }
+  }
+  .checkout-section {
+    padding-bottom: 32px;
+    .form__group:last-child{
+      padding-bottom: 0;
+    }
+  }
+}

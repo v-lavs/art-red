@@ -32,7 +32,8 @@
       //height: auto;
     }
   }
-  .section__text{
+
+  .section__text {
     letter-spacing: 0;
   }
 }
@@ -101,21 +102,27 @@
   line-height: 1.43;
 }
 
-@include mixins.respond-to(variables.$xl){
+@include mixins.respond-to(variables.$xl) {
   .section-contacts__thumb img {
     object-fit: contain;
   }
 }
 
-@include mixins.respond-to(variables.$sm){
+@include mixins.respond-to(variables.$sm) {
   .section-contacts__row {
     flex-direction: column;
     padding-top: 32px;
   }
-  .section-contacts__col{
+  .section-contacts__col {
     width: 100%;
   }
   .map-container {
     margin-top: 32px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .info-block:last-of-type {
+    line-height: 2;
   }
 }

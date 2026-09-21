@@ -14,8 +14,9 @@
 
 .accordion__header-title {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0;
+  color: #78560C;
 }
 
 .accordion-collapse {
@@ -82,10 +83,3 @@
     line-height: 2;
   }
 }
-
-@media screen and  (max-width: 490px){
-  .accordion__header-title {
-    font-size: 16px;
-  }
-}
-

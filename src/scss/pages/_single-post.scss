@@ -24,6 +24,7 @@
     line-height: 170%;
     letter-spacing: 0;
     color: #191001;
+    padding-bottom: 16px;
   }
 
   &__author {
@@ -114,6 +115,16 @@
 @include mixins.respond-to(variables.$xs){
   .post__footer{
     padding: 24px 0 60px;
+  }
+  .post__meta {
+    flex-wrap: wrap;
+  }
+  .post__author{
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .post__comments .text{
+    display: none;
   }
 }
 

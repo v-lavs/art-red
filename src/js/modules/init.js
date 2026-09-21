@@ -791,7 +791,7 @@ export function init() {
             }
             sidebar.classList.remove('is_open');
             backdrop.classList.remove('is-visible');
-            document.body.style.overflow = ' ';
+            document.body.style.overflow = '';
         }
 
         if (btnCloseSb) {

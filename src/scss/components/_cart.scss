@@ -74,12 +74,10 @@
 .cart-item__name {
   display: flex;
   align-items: center;
-  font-family: variables.$secondary-font;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 120%;
   letter-spacing: 2.35px;
-  text-transform: uppercase;
   max-width: 246px;
   width: 75%;
   min-height: 56px;
@@ -107,6 +105,7 @@
 .cart-summary__row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 12px;
 &:first-of-type{
   .cart-summary__value{
@@ -122,4 +121,30 @@
 .cart-summary__row--total .cart-summary__value{
   font-weight: 600;
   text-transform: uppercase;
+
+}
+@media screen and (max-width: 540px) {
+  .cart-drawer{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .cart-item{
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+  }
+  .cart-item__name,
+  .cart-item__price{
+    width: 100%;
+  }
+  .cart-item__info{
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cart-item__price {
+    text-align: left;
+  }
+  .cart-summary__row--total .cart-summary__label{
+    width: 50%;
+    line-height: 1.2;
+  }
 }

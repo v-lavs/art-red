@@ -15,6 +15,7 @@ body {
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
 
   &.disable-scroll {
     overflow: hidden;
@@ -124,7 +125,7 @@ body.menu-open {
   }
 
   h2 {
-    font-size: 45px;
+    font-size: 40px;
   }
 
   h3 {
@@ -133,7 +134,6 @@ body.menu-open {
 
   ul, ol {
     margin: 16px 0;
-
     li {
       margin-bottom: 8px;
     }

@@ -12,6 +12,7 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
   }
   &__item{
     padding-right: 8px;
