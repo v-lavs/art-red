@@ -54,6 +54,10 @@
   .section-intro .part-left{
     margin-bottom: 32px;
   }
+  .section-intro .part-right {
+    display: block;
+    text-align: left;
+  }
 }
 @include mixins.respond-to(variables.$xs){
   .section-intro .section__header {

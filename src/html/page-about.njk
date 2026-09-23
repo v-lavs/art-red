@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block title %}Про нас — {{ siteName }}{% endblock %}
-
+{% block main_class %} page-about{% endblock %}
 {% block content %}
     <section class="page-banner">
         <div class="container">
@@ -14,12 +14,7 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        {% from "macros/breadcrumbs.njk" import render_breadcrumbs as breadcrumbs with context %}
-        {{ breadcrumbs ([
-            {title: "Про нас"}
-        ]) }}
-    </div>
+
     <section class="section-about">
         <div class="container">
             <div class="about ">
