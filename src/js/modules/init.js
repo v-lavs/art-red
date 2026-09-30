@@ -112,22 +112,40 @@ export function init() {
 
         if (!toggles.length) return;
 
+        const filterElements = [];
+
         toggles.forEach(toggle => {
+            const targetId = toggle.getAttribute('data-target');
+            const targetBlock = document.querySelector(targetId);
+            const section = toggle.closest('.catalog-filter');
+
+            if (!targetBlock || !section) return;
+
+            filterElements.push({ targetBlock, section });
+
             toggle.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                const targetId = toggle.getAttribute('data-target');
-                const targetBlock = document.querySelector(targetId);
-                const section = toggle.closest('.catalog-filter');
-
-                if (!targetBlock || !section) return;
-
                 const isOpen = targetBlock.classList.toggle('show');
-
                 section.classList.toggle('is-active', isOpen);
             });
         });
+
+        const mediaQuery = window.matchMedia('(max-width: 991px)');
+
+        function checkResponsiveFilters() {
+            const isMobile = mediaQuery.matches;
+
+            filterElements.forEach(({ targetBlock, section }) => {
+                targetBlock.classList.toggle('show', !isMobile);
+                section.classList.toggle('is-active', !isMobile);
+            });
+        }
+
+        checkResponsiveFilters();
+        mediaQuery.addEventListener('change', checkResponsiveFilters);
     }
+
 
 //==============================================================================
 //  CUSTOM SELECT
@@ -161,18 +179,19 @@ export function init() {
 
         const duration = 3000;
         const startTime = performance.now();
+        const formatter = new Intl.NumberFormat('uk-UA');
 
         function animate(time) {
             const progress = Math.min((time - startTime) / duration, 1);
             const eased = easeOutCubic(progress);
 
             const value = Math.floor(start + eased * (countTo - start));
-            numEl.textContent = value;
+            numEl.textContent = formatter.format(value);
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
-                numEl.textContent = countTo;
+                numEl.textContent = formatter.format(countTo);
             }
         }
 

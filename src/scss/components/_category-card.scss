@@ -3,6 +3,9 @@
 
 .category-card{
   max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   &:first-of-type,
   &:nth-of-type(3n + 4){
     .category-card__body{
@@ -21,11 +24,11 @@
     }
   }
   &__body{
-    padding: 48px 32px;
+    padding: 48px 32px 120px;
     width: 100%;
     min-height: 483px;
     border-radius: 10px;
-
+    flex-grow: 1;
     position: relative;
     overflow: hidden;
   }
@@ -45,6 +48,8 @@
     margin-bottom: 10px;
     line-height: 1.25;
     color: #78560C;
+    position: relative;
+    z-index: 1;
     a{
       display: block;
       &:hover,
@@ -69,6 +74,7 @@
     display: flex;
     justify-content: center;
     padding-top: 38px;
+    margin-top: auto;
   }
 }
 

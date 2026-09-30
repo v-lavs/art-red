@@ -177,9 +177,6 @@
   }
 }
 
-@include mixins.respond-to(variables.$xl) {
-}
-
 .home {
   .blog-list .splide__slide:nth-child(odd) {
     width: 420px;
@@ -189,7 +186,12 @@
     width: 310px;
   }
 }
-
+.category-slider .splide__list{
+  align-items: stretch;
+}
+.category-slider .category-card.splide__slide{
+  height: auto;
+}
 @include mixins.respond-to(variables.$lg) {
   .home {
     .blog-list .splide__slide:nth-child(odd) {

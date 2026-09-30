@@ -4,7 +4,7 @@
             <img src="{{ item.image | default('img/placeholder.jpg') }}" alt="{{ item.name }}" width="90" height="90">
         </div>
         <div class="cart-item__info">
-            <h4 class="cart-item__name">{{ item.name }}</h4>
+            <div class="cart-item__name">{{ item.name }}</div>
             <div class="cart-item__price">{{ item.price }} ₴</div>
         </div>
         <div class="cart-item__controls">

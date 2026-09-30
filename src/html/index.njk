@@ -12,7 +12,7 @@
                         <img src="images/content/slide-banner-1f.png" class="banner-slide__img" alt="">
                         <div class="container">
                             <div class="banner-slide__content">
-                                <h2 class="banner-slide__title">Професійний посуд для вашого бізнесу та дому</h2>
+                                <h1 class="banner-slide__title">Професійний посуд для вашого бізнесу та дому</h1>
                                 <div class="banner-slide__subtitle">
                                     Офіційний імпортер. Гарантія якості, сервісне обслуговування та експертний підбір
                                     під ваші потреби.
@@ -60,106 +60,65 @@
                 </div>
                 {% set categories = [
                     {
-                        title: "столовий посуд",
+                        title: "Сервірування та фуршет",
                         img:"images/content/category-card/cat-1.png",
                         url: "page-catalog.html",
                         items: [
-                        { title: "Тарілки плоскі", url: "page-catalog.html" },
-                        { title: "Тарілки глибокі", url: "page-catalog.html" },
-                        { title: "Соусники", url: "page-catalog.html" },
-                        { title: "Посуд для запікання та подачі", url: "page-catalog.html" },
-                        { title: "Дошки, камені та сланці", url: "page-catalog.html" },
-                        { title: "Відерка, кошики та лопатки для подачі", url: "page-catalog.html" },
-                        { title: "Підноси для подачі", url: "#" }
+                        { title: "Серветниці", url: "page-catalog.html" },
+                        { title: "Ємності для спецій", url: "page-catalog.html" },
+                        { title: "Кошики, хлібниці та фруктівниці", url: "page-catalog.html" },
+                        { title: "Цукорниці та маслянки", url: "page-catalog.html" },
+                        { title: "Вази та підсвічники", url: "page-catalog.html" },
+                        { title: "Тортівниці та сервірувальні підставки", url: "page-catalog.html" },
+                        { title: "Глечики, графіни та диспенсери для напоїв", url: "page-catalog.html" },
+                        { title: "Настільні лампи", url: "#" },
+                        { title: "Дошки, камені та сланці", url: "#" },
+                        { title: "Підноси для сервірування та подачі", url: "#" },
+                        { title: "Аксесуари для фуршету", url: "#" }
                     ]
                     },
                     {
-                        title: "Чайно-кавова група",
+                        title: "Скляний та барний посуд",
                         img:"images/content/category-card/cat-2.png",
                         url: "page-catalog.html",
                         items: [
-                        { title: "Чашки чайні", url: "page-catelog.html" },
-                        { title: "Тарілки глибокі", url: "#" },
-                        { title: "Соусники", url: "#" },
-                        { title: "Посуд для запікання та подачі", url: "#" },
-                        { title: "Дошки, камені та сланці", url: "#" },
-                        { title: "Відерка, кошики та лопатки для подачі", url: "#" },
-                        { title: "Підноси для подачі", url: "#" }
-                    ]
-                    },
-                    {
-                        title: "Столові прибори",
-                        img:"images/content/category-card/cat-3.png",
-                        url: "page-catalog.html",
-                        items: [
-                        { title: "Виделки", url: "#" },
-                        { title: "Тарілки глибокі", url: "#" },
-                        { title: "Соусники", url: "#" },
-                        { title: "Посуд для запікання та подачі", url: "#" },
-                        { title: "Дошки, камені та сланці", url: "#" },
-                        { title: "Відерка, кошики та лопатки для подачі", url: "#" },
-                        { title: "Підноси для подачі", url: "#" }
-                    ]
-                    },
-                    {
-                        title: "Сервірування та фуршет",
-                        img:"images/content/category-card/cat-4.png",
-                        url: "page-catalog.html",
-                        items: [
-                        { title: "Серветниці", url: "#" },
-                        { title: "Спецівниці", url: "#" },
-                        { title: "Кошики, хлібниці та фруктівниці", url: "#" },
-                        { title: "Ємності для рідин", url: "#" },
-                        { title: "Цукернички та маслянички", url: "#" },
-                        { title: "Вази", url: "#" },
-                        { title: "Тортівниці та інше", url: "#" }
-                    ]
-                    },
-                    {
-                        title: "Скляний барний посуд",
-                        img:"images/content/category-card/cat-1.png",
-                        url: "#",
-                        items: [
-                        { title: "Келихи для вина", url: "#" },
+                        { title: "Келихи для вина", url: "page-catelog.html" },
                         { title: "Келихи для шампанського", url: "#" },
-                        { title: "Бокали для пива", url: "#" },
-                        { title: "Стакани для напоїв та коктейлів", url: "#" },
-                        { title: "Рюмки та шоти", url: "#" },
-                        { title: "Графіни", url: "#" },
-                        { title: "Декантери", url: "#" }
-                    ]
-                    },
-                    {
-                        title: "Освітлення",
-                        img:"images/content/category-card/cat-1.png",
-                        url: "#",
-                        items: [
-                        { title: "Світильники", url: "#" },
-                        { title: "Підсвічники", url: "#" }
+                        { title: "Келихи для пива", url: "#" },
+                        { title: "Келихи для коньяку, бренді та граппи", url: "#" },
+                        { title: "Келихи для коктейлів", url: "#" },
+                        { title: "Склянки для віскі", url: "#" },
+                        { title: "Чарки та стопки", url: "#" },
+                        { title: "Графіни та декантери", url: "#" },
+                        { title: "Склянки та келихи для води", url: "#" }
                     ]
                     },
                     {
                         title: "Барний інвентар",
-                        img:"images/content/category-card/cat-1.png",
-                        url: "#",
+                        img:"images/content/category-card/cat-3.png",
+                        url: "page-catalog.html",
                         items: [
-                        { title: "Келери та відерка", url: "#" },
-                        { title: "Додаткові аксесуари", url: "#" },
-                        { title: "Підноси барні", url: "#" }
+                        { title: "Кулери та відерця", url: "#" },
+                        { title: "Штопори та відкривачки", url: "#" },
+                        { title: "Барні аксесуари", url: "#" },
+                        { title: "Органайзери та барні ящики", url: "#" },
+                        { title: "Шейкери, стрейнери та мадлери", url: "#" },
+                        { title: "Барні ложки", url: "#" },
+                        { title: "Гейзери та джигери", url: "#" },
+                        { title: "Мірний посуд", url: "#" }
                     ]
                     },
                     {
                         title: "Кухонний посуд",
-                        img:"images/content/category-card/cat-1.png",
-                        url: "#",
+                        img:"images/content/category-card/cat-4.png",
+                        url: "page-catalog.html",
                         items: [
-                        { title: "Профіесійні ножі", url: "#" },
                         { title: "Каструлі", url: "#" },
-                        { title: "Сковорідки", url: "#" },
-                        { title: "Сотейники", url: "#" },
+                        { title: "Сковороди", url: "#" },
+                        { title: "Сотейники, казани та ковші", url: "#" },
                         { title: "Миски", url: "#" },
-                        { title: "Гатсроємності", url: "#" },
-                        { title: "Органзайзери для зберігання та інше", url: "#" }
+                        { title: "Гастроємності та контейнери для зберігання", url: "#" },
+                        { title: "Деко та форми для запікання", url: "#" }
                     ]
                     },
                     {
@@ -168,8 +127,9 @@
                         url: "#",
                         items: [
                         { title: "Плейсмати та ранери", url: "#" },
-                        { title: "Скатертини", url: "#" },
-                        { title: "Прихватки", url: "#" }
+                        { title: "Скатертини та серветки", url: "#" },
+                        { title: "Рушники та прихватки", url: "#" },
+                        { title: "Кітелі", url: "#" }
                     ]
                     },
                     {
@@ -195,6 +155,48 @@
                         items: [
 
                     ]
+                    },
+                    {
+                        title: "Кухонний інвентар та аксесуари",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Професійні ножі", url: "#" },
+                        { title: "Ручний інструмент", url: "#" },
+                        { title: "Дошки для нарізання", url: "#" },
+                        { title: "Терки, друшляки  та миски", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Столовий посуд",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Тарілки плоскі", url: "#" },
+                        { title: "Тарілки глибокі", url: "#" },
+                        { title: "Салатники та боули", url: "#" },
+                        { title: "Посуд для подачі та сервірування", url: "#" },
+                        { title: "Чашки, кухлі та блюдця", url: "#" },
+                        { title: "Чайники та цукорниці", url: "#" },
+                        { title: "Кавники та молочники", url: "#" }
+                    ]
+                    },
+                    {
+                        title: "Столові прибори",
+                        img:"images/content/category-card/cat-1.png",
+                        url: "#",
+                        items: [
+                        { title: "Виделки", url: "page-catalog.html" },
+                        { title: " Ложки", url: "page-catalog.html" },
+                        { title: "Ножі", url: "page-catalog.html" },
+                        { title: "Палички для їжі", url: "page-catalog.html" },
+                        { title: "Підставки під прибори", url: "page-catalog.html" },
+                        { title: "Набори столових приборів", url: "page-catalog.html" },
+                        { title: "Стейкові прибори", url: "#" },
+                        { title: "Органайзери для столових приборів", url: "#" },
+                        { title: "Прибори для морепродуктів та делікатесів", url: "#" },
+                        { title: "Сервірувальні прибори", url: "#" }
+                    ]
                     }
                 ] %}
                 <div class="splide category-slider">
@@ -203,9 +205,9 @@
                             {% for category in categories %}
                                 <li class="category-card splide__slide" style="--card-bg: {{ category.bg }};">
                                     <div class="category-card__body">
-                                        <h3 class="category-card__title">
+                                        <div class="category-card__title">
                                             {{ category.title }}
-                                        </h3>
+                                        </div>
 
                                         <ul class="category-card__list">
                                             {% for item in category.items %}
@@ -380,7 +382,7 @@
                 </div>
                 <div class="accordion__item">
                     <header class="accordion__header">
-                        <h4 class="accordion__header-title">Що таке брашування приборів? </h4>
+                        <h3 class="accordion__header-title">Що таке брашування приборів? </h3>
                         <span class="toggle-collapse"></span>
                     </header>
                     <div class="accordion-collapse">
@@ -398,7 +400,7 @@
                 </div>
                 <div class="accordion__item">
                     <header class="accordion__header">
-                        <h4 class="accordion__header-title">Яка сталь у приборах Abert?</h4>
+                        <h3 class="accordion__header-title">Яка сталь у приборах Abert?</h3>
                         <span class="toggle-collapse"></span>
                     </header>
                     <div class="accordion-collapse">
@@ -631,7 +633,7 @@
 
                                                 {# Назва товару #}
                                                 <a href="{{ product.url }}">
-                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                    <div class="card-product__title">{{ product.title }}</div>
                                                 </a>
 
                                                 {# Категорія / опис #}
@@ -784,7 +786,7 @@
 
                                                 {# Назва товару #}
                                                 <a href="{{ product.url }}">
-                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                    <div class="card-product__title">{{ product.title }}</div>
                                                 </a>
 
                                                 {# Категорія / опис #}
@@ -936,7 +938,7 @@
 
                                                 {# Назва товару #}
                                                 <a href="{{ product.url }}">
-                                                    <h3 class="card-product__title">{{ product.title }}</h3>
+                                                    <div class="card-product__title">{{ product.title }}</div>
                                                 </a>
 
                                                 {# Категорія / опис #}
