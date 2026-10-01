@@ -13,7 +13,7 @@
 
 .product-container {
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: 32px;
 }
 
 .product-gallery {
@@ -150,7 +150,11 @@
   margin: 0 !important;
   display: none !important;
 }
-
+.qty-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+}
 .qty-input:focus {
   outline: none !important;
   background-color: transparent !important;
@@ -182,9 +186,8 @@
     margin-bottom: 0;
   }
 
-  &:before {
+  &__icon {
     position: absolute;
-    content: '';
     width: 24px;
     height: 24px;
     left: 0;
@@ -193,29 +196,10 @@
     background-size: contain;
     background-position: center;
   }
-
-  &:first-of-type:before {
-    background-image: url(../images/icons/delivery.svg);
-  }
-
-  &:nth-of-type(2):before {
-    background-image: url(../images/icons/wallet.svg);
-  }
-
-  &:nth-of-type(3):before {
-    background-image: url(../images/icons/exchange.svg);
-  }
-
-  &:nth-of-type(4):before {
-    background-image: url(../images/icons/seal-check.svg);
-  }
-
-  &:nth-of-type(5):before {
-    background-image: url(../images/icons/rewards.svg);
-  }
 }
 
 .product-description {
+  padding-bottom: 60px;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -223,9 +207,13 @@
   }
 
   &__content {
-    height: 0;
-    opacity: 0;
-    transition: max-height 0.3s ease-out, opacity .5s;
+    //height: 0;
+    //opacity: 0;
+    //transition: max-height 0.3s ease-out, opacity .5s;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.14px;
+    padding-bottom: 24px;
   }
 
   .section__title_sm {
@@ -233,37 +221,32 @@
   }
 }
 
-.product-description__inner {
-  overflow: hidden;
-}
+//.product-description__inner {
+//  overflow: hidden;
+//}
 
-.product-description.is-open .product-description__content {
-  height: auto;
-  max-height: 500px;
-  grid-template-rows: 1fr;
-  font-weight: 400;
-  line-height: 25px;
-  letter-spacing: -0.14px;
-  padding-bottom: 24px;
-  opacity: 1;
+//.product-description .product-description__content {
+//  height: auto;
+//  max-height: 500px;
+//  grid-template-rows: 1fr;
+//  opacity: 1;
+//}
 
-}
-
-.product-description .arrow-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  width: 24px;
-  height: 24px;
-  background-image: url(../images/icons/icon-arrow-down.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: rotate(180deg);
-}
-
-.product-description.is-open .arrow-icon {
-  transform: rotate(0);
-}
+//.product-description .arrow-icon {
+//  display: inline-block;
+//  transition: transform 0.3s ease;
+//  width: 24px;
+//  height: 24px;
+//  background-image: url(../images/icons/icon-arrow-down.svg);
+//  background-repeat: no-repeat;
+//  background-size: contain;
+//  background-position: center;
+//  transform: rotate(180deg);
+//}
+//
+//.product-description.is-open .arrow-icon {
+//  transform: rotate(0);
+//}
 
 .specs-title {
   font-weight: 600;

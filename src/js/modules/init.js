@@ -542,31 +542,69 @@ export function init() {
 //  ============================================================================
 //  SLIDER SIMILAR SLIDER
 //  ============================================================================
-    function initSimilarSlider() {
-        if (!document.querySelector('.similar-slider')) return;
-        const similarSlider = new Splide('.similar-slider', {
-            perPage: 4,
-            perMove: 1,
-            gap: 20,
-            pagination: false,
-            arrowPath: 'M33 6.36377C33.5523 6.36377 34 6.81148 34 7.36377C34 7.91605 33.5523 8.36377 33 8.36377V7.36377V6.36377ZM0.292892 8.07088C-0.0976295 7.68035 -0.0976295 7.04719 0.292892 6.65666L6.65685 0.292702C7.04738 -0.0978227 7.68054 -0.0978227 8.07107 0.292702C8.46159 0.683226 8.46159 1.31639 8.07107 1.70692L2.41421 7.36377L8.07107 13.0206C8.46159 13.4111 8.46159 14.0443 8.07107 14.4348C7.68054 14.8254 7.04738 14.8254 6.65685 14.4348L0.292892 8.07088ZM33 7.36377V8.36377H1V7.36377V6.36377H33V7.36377Z',
-            speed: 1200,
-            breakpoints: {
-                991: {
-                    perPage: 3,
-                },
-                767: {
-                    perPage: 2,
-                    gap: 7,
-                },
-                510: {
-                    perPage: 1,
-                },
-            }
-        });
-        similarSlider.mount();
-    }
+//     function initSimilarSlider() {
+//         if (!document.querySelector('.similar-slider')) return;
+//         const similarSlider = new Splide('.similar-slider', {
+//             perPage: 4,
+//             perMove: 1,
+//             gap: 20,
+//             pagination: false,
+//             arrowPath: 'M33 6.36377C33.5523 6.36377 34 6.81148 34 7.36377C34 7.91605 33.5523 8.36377 33 8.36377V7.36377V6.36377ZM0.292892 8.07088C-0.0976295 7.68035 -0.0976295 7.04719 0.292892 6.65666L6.65685 0.292702C7.04738 -0.0978227 7.68054 -0.0978227 8.07107 0.292702C8.46159 0.683226 8.46159 1.31639 8.07107 1.70692L2.41421 7.36377L8.07107 13.0206C8.46159 13.4111 8.46159 14.0443 8.07107 14.4348C7.68054 14.8254 7.04738 14.8254 6.65685 14.4348L0.292892 8.07088ZM33 7.36377V8.36377H1V7.36377V6.36377H33V7.36377Z',
+//             speed: 1200,
+//             breakpoints: {
+//                 991: {
+//                     perPage: 3,
+//                 },
+//                 767: {
+//                     perPage: 2,
+//                     gap: 7,
+//                 },
+//                 510: {
+//                     perPage: 1,
+//                 },
+//             }
+//         });
+//         similarSlider.mount();
+//     }
+    function initSimilarSliders() {
+        document.querySelectorAll('.similar-slider').forEach(slider => {
+            console.log(slider.dataset.sliderType);
 
+            const type = slider.dataset.sliderType;
+
+            const configs = {
+                productsSimilar: {
+                    perPage: 4,
+                    breakpoints: {
+                        991: { perPage: 3 },
+                        767: { perPage: 2, gap: 7 },
+                        510: { perPage: 1 },
+                    },
+                },
+
+                postsSimilar: {
+                    perPage: 3,
+                    breakpoints: {
+                        991: { perPage: 2, gap: 18 },
+                        560: { perPage: 1 },
+                    },
+                },
+            };
+
+            const config = configs[type];
+
+            if (!config) return;
+
+            new Splide(slider, {
+                perMove: 1,
+                gap: 20,
+                pagination: false,
+                arrowPath: 'M33 6.36377C33.5523 6.36377 34 6.81148 34 7.36377C34 7.91605 33.5523 8.36377 33 8.36377V7.36377V6.36377ZM0.292892 8.07088C-0.0976295 7.68035 -0.0976295 7.04719 0.292892 6.65666L6.65685 0.292702C7.04738 -0.0978227 7.68054 -0.0978227 8.07107 0.292702C8.46159 0.683226 8.46159 1.31639 8.07107 1.70692L2.41421 7.36377L8.07107 13.0206C8.46159 13.4111 8.46159 14.0443 8.07107 14.4348C7.68054 14.8254 7.04738 14.8254 6.65685 14.4348L0.292892 8.07088ZM33 7.36377V8.36377H1V7.36377V6.36377H33V7.36377Z',
+                speed: 1200,
+                ...config,
+            }).mount();
+        });
+    }
 //===========================================================================================================
 // PRODUCT SLIDER
 //===========================================================================================================
@@ -613,23 +651,23 @@ export function init() {
 //===========================================================================================================
 //HIDDEN CONTENT
 //===========================================================================================================
-    function initHiddenContent() {
-        const accordionHeaders = document.querySelectorAll('.product-description__header');
-
-        if (accordionHeaders.length === 0) return;
-
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', function () {
-                // Знаходимо батьківський контейнер всього акордеона
-                const accordionWrapper = this.closest('.product-description');
-
-                if (accordionWrapper) {
-                    // Просто перемикаємо клас .is-open на всьому блоці
-                    accordionWrapper.classList.toggle('is-open');
-                }
-            });
-        });
-    }
+//     function initHiddenContent() {
+//         const accordionHeaders = document.querySelectorAll('.product-description__header');
+//
+//         if (accordionHeaders.length === 0) return;
+//
+//         accordionHeaders.forEach(header => {
+//             header.addEventListener('click', function () {
+//                 // Знаходимо батьківський контейнер всього акордеона
+//                 const accordionWrapper = this.closest('.product-description');
+//
+//                 if (accordionWrapper) {
+//                     // Просто перемикаємо клас .is-open на всьому блоці
+//                     accordionWrapper.classList.toggle('is-open');
+//                 }
+//             });
+//         });
+//     }
 
 //===========================================================================================================
 // QUANTITY PICKERS
@@ -695,7 +733,7 @@ export function init() {
     }
 
 //===========================================================================================================
-//  SEARH
+//  SEARCH
 //===========================================================================================================
     const siteHeader = document.querySelector('.header');
 
@@ -830,9 +868,10 @@ export function init() {
     initSliderPartners('.partner-marquee-left', 1, 'ltr');
     initSliderPartners('.partner-marquee-right', -1, 'rtl');
     initAccordion();
-    initSimilarSlider();
+    // initSimilarSlider();
+    initSimilarSliders();
     initProductSliders();
-    initHiddenContent();
+    // initHiddenContent();
     initQuantityPickers();
     initSearch(siteHeader);
     initCartDriver();

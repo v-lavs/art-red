@@ -109,4 +109,90 @@
         </div>
     </article>
 
+    <section class="section-similar">
+        <div class="container">
+            <div class="splide-custom-nav">
+                <div class="section-similar__heading">
+                    <h2 class="section__title section__title_sm">читайте також</h2>
+                    <div class="splide__arrows custom-arrows">
+                        <button class="splide__arrow splide__arrow--prev"></button>
+                        <button class="splide__arrow splide__arrow--next"></button>
+                    </div>
+                </div>
+                <div class="splide similar-slider" data-slider-type="postsSimilar">
+                    <div class="splide__track">
+                        {% set posts = [
+                            {
+                                image: "images/content/blog-card-img.png",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            },
+                            {
+                                image: "images/content/card-post-2.png",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            },
+                            {
+                                image: "images/content/card-post-3.jpg",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            },
+                            {
+                                image: "images/content/blog-card-img2.png",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            },
+                            {
+                                image: "images/content/blog-card-img.png",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            },
+                            {
+                                image: "images/content/blog-card-img2.png",
+                                url: "single-post.html",
+                                title: "Новинки Весна 2025 від Churchill",
+                                date:"17.02.2025",
+                                text: "Бренд Churchill представив нові колекції тарілок, які поєднують традиції англійської кераміки"
+                            }
+                        ] %}
+                        <ul class="splide__list">
+                            {% for post in posts %}
+                                <li class="card-post splide__slide">
+
+                                    <a href="{{ post.url }}" class="card-post__thumb">
+                                        <img src="{{ post.image }}" alt="" class="card-post__img">
+                                    </a>
+
+                                    <div class="card-post__content">
+                                        <div class="card-post__date">{{ post.date }}</div>
+                                        <a href="{{ post.url }}">
+                                            <h3 class="card-post__title">{{ post.title }}</h3>
+                                        </a>
+
+                                        <div class="card-post__text">{{ post.text }}</div>
+
+                                        <a href="single-post.html" class="btn btn_primary">
+                                            Детальніше
+                                        </a>
+                                    </div>
+
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

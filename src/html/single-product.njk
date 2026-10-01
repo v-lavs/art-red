@@ -84,7 +84,8 @@
                             <input type="number" name="quantity" class="qty-input" value="0" min="0" step="1">
                             <button type="button" class="qty-btn qty-btn_plus" aria-label="Збільшити"></button>
                         </div>
-                        <button type="submit" class="btn btn_secondary btn_orange btn-add-to-cart">Додати в кошик</button>
+                        <button type="submit" class="btn btn_secondary btn_orange btn-add-to-cart">Додати в кошик
+                        </button>
 
                         <button type="button" class="btn btn-out-of-stock" disabled>Немає в наявності</button>
                     </div>
@@ -92,41 +93,57 @@
                 <a href="checkout.html" class="btn btn_primary calc-link">До розрахунку</a>
 
                 <ul class="benefits-list">
-                    <li class="benefit-item"><strong>Безкоштовна</strong> доставка на суму від 3000 UAH протягом 1-2
-                        робочих днів
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/delivery.svg"
+                                                                                   alt=""></span><span
+                                class="benefit-item__text"><strong>Безкоштовна</strong> доставка на суму від 3000 UAH протягом 1-2
+                        робочих днів</span>
                     </li>
-                    <li class="benefit-item"><strong>Безпечна</strong> та швидка оплата карткою на сайті</li>
-                    <li class="benefit-item">Можливий <strong>обмін/повернення</strong></li>
-                    <li class="benefit-item"><strong>Гарантія</strong> на товар</li>
-                    <li class="benefit-item">Персональна <strong>система бонусів</strong>, лояльності та знижок</li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/wallet.svg" alt=""></span><span
+                                class="benefit-item__text"><strong>Безпечна</strong> та швидка оплата карткою на сайті</span>
+                    </li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/exchange.svg"
+                                                                                   alt=""></span><span
+                                class="benefit-item__text">Можливий <strong>обмін/повернення</strong></span></li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/seal-check.svg"
+                                                                                   alt=""></span><span
+                                class="benefit-item__text"><strong>Гарантія</strong> на товар від виробника</span></li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/rewards.svg"
+                                                                                   alt=""></span><span
+                                class="benefit-item__text">Персональна <strong>система бонусів</strong>, лояльності та знижок</span>
+                    </li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img
+                                    src="images/icons/fluent_dishwasher.svg" alt=""></span><span
+                                class="benefit-item__text">Придатний для <strong>посудомийки </strong></span></li>
+                    <li class="benefit-item"><span class="benefit-item__icon"><img src="images/icons/food-bank.svg"
+                                                                                   alt=""></span><span
+                                class="benefit-item__text"><strong>Food-safe</strong></span></li>
                 </ul>
-
-                <section class="product-description">
-                    <div class="product-description__inner">
-                        <div class="product-description__header">
-                            <h2 class="section__title section__title_sm">Опис</h2>
-                            <span class="arrow-icon"></span>
-                        </div>
-                        <div class="product-description__content">
-                            <p>Зустрічайте Umi – лінію посуду в японському стилі, яка перевершить усі ваші очікування.
-                                Виготовлена з високоякісної та міцної готельної порцеляни та вкрита автентичною
-                                реактивною глазур’ю, ця колекція ідеально підходить для подачі страв східної кухні. Umi
-                                характеризується поєднанням м’яких і міцних текстур та темно-зелених і синіх відтінків.
-                                Підніміть презентацію ваших суші або інших східних страв на вищий рівень з Umi!</p>
-                        </div>
-                    </div>
-                    <h3 class="specs-title">Характеристики товару:</h3>
-                    <ul class="specs-list">
-                        <li><span class="spec-label">Артикул:</span> <span class="spec-value">606804</span></li>
-                        <li><span class="spec-label">Бренд:</span> <span class="spec-value">Arbert</span></li>
-                        <li><span class="spec-label">Колекція:</span> <span class="spec-value">Umi</span></li>
-                        <li><span class="spec-label">Матеріал:</span> <span class="spec-value">Порцеляна</span></li>
-                        <li><span class="spec-label">Розмір:</span> <span class="spec-value">від 16-22 см</span></li>
-                    </ul>
-
-                </section>
+                <h3 class="specs-title">Характеристики товару:</h3>
+                <ul class="specs-list">
+                    <li><span class="spec-label">Артикул:</span> <span class="spec-value">606804</span></li>
+                    <li><span class="spec-label">Бренд:</span> <span class="spec-value"><a
+                                    href="page-brand-products.njk">Arbert</a></span></li>
+                    <li><span class="spec-label">Колекція:</span> <span class="spec-value">Umi</span></li>
+                    <li><span class="spec-label">Матеріал:</span> <span class="spec-value">Порцеляна</span></li>
+                    <li><span class="spec-label">Розмір:</span> <span class="spec-value">від 16-22 см</span></li>
+                </ul>
             </div>
         </div>
+        <section class="product-description">
+            {# <div class="product-description__inner"> #}
+            <div class="product-description__header">
+                <h2 class="section__title section__title_sm">Опис</h2>
+                {# <span class="arrow-icon"></span> #}
+            </div>
+            <div class="product-description__content">
+                <p>Зустрічайте Umi – лінію посуду в японському стилі, яка перевершить усі ваші очікування.
+                    Виготовлена з високоякісної та міцної готельної порцеляни та вкрита автентичною
+                    реактивною глазур’ю, ця колекція ідеально підходить для подачі страв східної кухні. Umi
+                    характеризується поєднанням м’яких і міцних текстур та темно-зелених і синіх відтінків.
+                    Підніміть презентацію ваших суші або інших східних страв на вищий рівень з Umi!</p>
+            </div>
+            {# </div> #}
+        </section>
     </div>
 
     <section class="section-similar">
@@ -139,7 +156,7 @@
                         <button class="splide__arrow splide__arrow--next"></button>
                     </div>
                 </div>
-                <div class="splide similar-slider">
+                <div class="splide similar-slider" data-slider-type="productsSimilar">
                     <div class="splide__track">
                         {% set products = [
                             {
